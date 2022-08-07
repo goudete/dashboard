@@ -1,8 +1,8 @@
-export interface DAO {
+export interface Dao {
     id: string,
 	name: string,
-	bankAccounts: BankAccount[],
-	cards: Card[]
+	bankAccounts?: BankAccount[],
+	cards?: Card[]
 }
 
 export interface BankAccount {
