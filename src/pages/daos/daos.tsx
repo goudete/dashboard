@@ -1,8 +1,20 @@
 import React from 'react';
+import { mockDaos } from '../../mockData';
+import { Dao } from '../../types/types';
 
-function daos() {
+import './daos.scss';
 
-    return <div></div>;
+
+function Daos() {
+
+  return <div className="dao-container">
+    {
+      mockDaos.map((dao: Dao) => (<div key={dao.id} className='dao'>
+          <p>{dao.name}</p>
+        </div>
+      ))
+    }
+  </div>;
 }
 
-export default daos;
+export default Daos;

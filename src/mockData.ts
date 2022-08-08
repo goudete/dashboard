@@ -1,6 +1,6 @@
 import { Dao, Transaction, Card, BankAccount } from "./types/types";
 
-const daos: Dao[] = [
+const mockDaos: Dao[] = [
     {
         id: '1',
         name: 'new-brex',
@@ -23,7 +23,7 @@ const daos: Dao[] = [
     },
 ];
 
-const bankAccount: BankAccount[] = [
+const bankAccounts: BankAccount[] = [
     {
         DaoId: '1',
     },
@@ -54,16 +54,16 @@ const cards: Card[] = [
         owners: 'enrique',
         bankAccountId: '12345',
         limit: 1000,
-        cardNumber: 123456789101010
+        cardNumber: 12345678910
     },
     {
         DaoId: '2',
         owners: 'kian',
         bankAccountId: '54321',
         limit: 1000,
-        cardNumber: 098765432123456
+        cardNumber: 12322245499
     },
 ];
 
 
-export { daos, transactions };
+export { mockDaos, bankAccounts, transactions, cards };

@@ -18,7 +18,7 @@ export interface Card {
 }
 
 export interface Transaction {
-    date: Date,
+    date: number,
     amount: number,
     name: string
 }
