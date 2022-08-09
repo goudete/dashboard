@@ -1,5 +1,5 @@
 import React from 'react';
-import Daos from './pages/daos/daos';
+import { Link, Outlet } from 'react-router-dom';
 
 import './App.scss';
 
@@ -8,10 +8,14 @@ function App() {
   return (
     <div className="container">
       <div className="container__header">
-        <p>header</p>
+        <div className="container__header-title">
+          <Link to="/daos" className='link'>
+            <p>new-brex</p>
+          </Link>
+        </div>
       </div>
       <div className="container__body">
-        <Daos />
+        <Outlet />
       </div>
       <div className="container__footer">
         <p>footer</p>

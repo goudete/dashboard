@@ -11,15 +11,15 @@ const mockDaos: Dao[] = [
     },
     {
         id: '3',
-        name: 'madre',
+        name: 'nyc-dao',
     },
     {
         id: '4',
-        name: 'mother',
+        name: 'empire-dao',
     },
     {
         id: '5',
-        name: 'nyc',
+        name: 'poop-dao',
     },
 ];
 
