@@ -10,8 +10,8 @@ function Daos() {
 
   return <div className="daos-container">
     {
-      mockDaos.map((dao: Dao) => (<Link to={`/dao/${dao.name}`} className='link'>
-          <div key={dao.id} className='daos-container__dao'>
+      mockDaos.map((dao: Dao) => (<Link to={`/dao/${dao.name}`} className='daos-container__dao'>
+          <div key={dao.id}>
             <p>{dao.name}</p>
           </div>
         </Link>

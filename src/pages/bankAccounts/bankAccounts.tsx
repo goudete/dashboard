@@ -1,8 +1,13 @@
 import React from 'react';
 
-function bankAccounts() {
+import './bankAccounts.scss';
 
-    return <div></div>;
+
+function BankAccounts() {
+
+    return <div className='bankAccounts-container'>
+        bankAccounts
+    </div>;
 }
 
-export default bankAccounts;
+export default BankAccounts;

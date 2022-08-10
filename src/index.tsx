@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import Daos from './pages/daos/daos';
+import Dao from './pages/dao/dao';
 import DaoHome from './pages/daoHome/daoHome';
+import BankAccounts from './pages/bankAccounts/bankAccounts';
+import Cards from './pages/cards/cards';
+import Transactions from './pages/transactions/transactions';
 import StripeTest from './pages/stripe/stripeTest';
 import reportWebVitals from './reportWebVitals';
 import {
@@ -23,8 +27,11 @@ root.render(
         <Route path="/" element={<App />}>
           <Route path="stripeTest" element={<StripeTest />} />
           <Route path="daos" element={<Daos />} />
-          <Route path="dao" element={<DaoHome />}>
+          <Route path="dao" element={<Dao />}>
             <Route path=":daoId" element={<DaoHome />} />
+            <Route path="bankAccounts" element={<BankAccounts />} />
+            <Route path="cards" element={<Cards />} />
+            <Route path="transactions" element={<Transactions />} />
           </Route>
         </Route>
       </Routes>

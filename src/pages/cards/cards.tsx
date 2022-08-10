@@ -1,8 +1,10 @@
 import React from 'react';
 
-function cards() {
+function Cards() {
 
-    return <div></div>;
+    return <div>
+        cards
+    </div>;
 }
 
-export default cards;
+export default Cards;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, Link, Outlet } from "react-router-dom";
 
 import './daoHome.scss'
 
@@ -9,15 +9,23 @@ function DaoHome() {
 
     return <div className='daoHome-container'>
         <div className='daoHome-container__top'>
-            <div className='daoHome-container__top-bankAccounts'>
-                bank accounts
-            </div>
-            <div className='daoHome-container__top-cards'>
-                cards
-            </div>
+            <Link to={`/dao/bankAccounts`} className='link'>
+                <div className='daoHome-container__top-bankAccounts'>
+                    bank accounts
+                </div>
+            </Link>
+            <Link to={`/dao/cards`} className='link'>
+                <div className='daoHome-container__top-cards'>
+                    cards
+                </div>
+            </Link>
         </div>
         <div className='daoHome-container__bottom'>
-            transactions
+            <Link to={`/dao/transactions`} className='link'>
+                <div className='daoHome-container__bottom-transactions'>
+                    transactions
+                </div>
+            </Link>
         </div>
     </div>;
 }

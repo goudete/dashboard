@@ -10,7 +10,7 @@ function App() {
       <div className="container__header">
         <div className="container__header-title">
           <Link to="/daos" className='link'>
-            <p>new-brex</p>
+            <h1>new-brex</h1>
           </Link>
         </div>
       </div>

@@ -2,31 +2,30 @@
     background-color: #282c34;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
     color: white;
 
     &__header {
-        height: 5%;
+        height: 10%;
         width: 100%;
         border-bottom: 0.5px solid rgb(129, 110, 110);
         font-weight: bold;
 
         &-title {
-            margin-left: 21%;
+            margin-left: 11%;
         }
     }
 
     &__body {
         display: flex;
-        flex-direction: column;
-        height: 90%;
-        margin: auto;
-        max-width: 60%;
+        flex-direction: row;
+        height: 80%;
+        max-width: 100%;
         text-align: center;
     }
 
     &__footer {
-        height: 2%;
+        height: 10%;
         width: 100%;
         border-top: 0.5px solid rgb(129, 110, 110);
         text-align: center;
