@@ -4,10 +4,10 @@ import { Transaction } from '../../types/types';
 
 function Transactions() {
 
-    return <div className='cards-container'>
+    return <div className='transactions-container'>
         {
             transactions.map((transaction: Transaction) => (
-                <div className='cards-container__card'>
+                <div className='transactions-container__transaction'>
                     <pre>
                         date: {transaction.date} <br />
                         amount: {transaction.amount} <br />
