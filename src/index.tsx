@@ -4,6 +4,7 @@ import './index.scss';
 import App from './App';
 import Daos from './pages/daos/daos';
 import DaoHome from './pages/daoHome/daoHome';
+import StripeTest from './pages/stripe/stripeTest';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter,
@@ -20,6 +21,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
+          <Route path="stripeTest" element={<StripeTest />} />
           <Route path="daos" element={<Daos />} />
           <Route path="dao" element={<DaoHome />}>
             <Route path=":daoId" element={<DaoHome />} />
