@@ -2,7 +2,7 @@ import React from 'react';
 import { transactions } from '../../mockData';
 import { Transaction } from '../../types/types';
 
-import './transaction.scss';
+import './transactions.scss';
 
 
 function Transactions() {
