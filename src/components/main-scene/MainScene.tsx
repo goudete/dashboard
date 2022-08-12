@@ -33,13 +33,14 @@ export const MainScene = ({}: MainSceneProps) => {
 
         <div className={styles.uiHolder}>
           <div className={styles.textSection}>
-            <h1>
+            <h1 className={'animate__animated animate__fadeInDown'}>
               Easy fiat payments,<br/>
               for cryptoholders<br/>and DAO's
             </h1>
-            <p>
-              Connect your wallet, top up your balance, order an payment s 
+            <p className={'animate__animated animate__fadeInUp'}>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
             </p>
+            
           </div>
         </div>
 

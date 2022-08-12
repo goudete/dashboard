@@ -85,11 +85,12 @@ function App() {
     setMainPage(loc.pathname === '/')
   }, [loc])
 
+  const nav = useNavigate();
 
   return (
     <div className="container">
       <div className="container__header">
-        <div className="logo-holder">
+        <div className="logo-holder" onClick={() => nav('/')}>
           <img src={mainLogo}/>
         </div>
         <div className="header-divider"/>

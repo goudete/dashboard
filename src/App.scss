@@ -1,5 +1,5 @@
 .container {
-    background-color: #282c34;
+    background-color: #1e1e1e;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -31,10 +31,32 @@
             }
         }
 
-        .header-divider {}
+        .header-divider {
+            position: relative;
+            height: 100%;
+            width: 1px;
+            background: #fff;
+            margin-left: 38px;
+            transform: translateY(-200px);
+            animation: slideIn .8s ease-in-out forwards;
+            animation-delay: .2s;
+            &:after{
+                content: '';
+                position: absolute;
+                width: 5px;
+                height: 5px;
+                border-radius: 100%;
+                background: #fff;
+                bottom: 0;
+                left: -2px;
+                opacity: 0;
+                animation: fadeIn .3s ease-in-out forwards;
+                animation-delay: 1s;
+            }
+        }
 
         nav {
-            margin-left: 60px;
+            margin-left: 40px;
 
             a {
                 font-size: 18px;
@@ -85,5 +107,17 @@
         width: 100%;
         border-top: 0.5px solid rgb(129, 110, 110);
         text-align: center;
+    }
+}
+
+@keyframes slideIn{
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn{
+    to{
+        opacity: 1;
     }
 }

@@ -1,4 +1,4 @@
-.canvasHolder{
+.canvasHolder {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -7,13 +7,15 @@
   overflow: hidden;
   z-index: 1;
 }
-.btn{
+
+.btn {
   width: 120px;
   height: 40px;
   line-height: 40px;
   color: #fff;
 }
-.uiHolder{
+
+.uiHolder {
   box-sizing: border-box;
   padding: 0 10%;
   width: 100%;
@@ -22,18 +24,23 @@
   position: absolute;
   right: 0;
   top: 80px;
+  // overflow: hidden;
 
-  .textSection{
+  .textSection {
     margin-top: 20%;
-    max-width: 35%;
+    max-width: 25%;
     text-align: left;
+
     h1 {
-      font-weight: 500;
-      
-      font-size: 36px;
+      // font-weight: 500;
+      font-size: 42px;
+      margin-bottom: 20px;
     }
-    p{
+
+    p {
       font-size: 18px;
+      animation-delay: .2s !important;
+      // line-height: 24px;
     }
   }
 
