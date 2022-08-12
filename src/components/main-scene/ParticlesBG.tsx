@@ -1,14 +1,11 @@
-import { Center, OrbitControls, useHelper } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
-import { useControls } from "leva";
 import React, { useRef } from "react";
+import { Center, OrbitControls } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { useControls } from "leva";
 import {
   BufferGeometry,
   Euler,
   Float32BufferAttribute,
-  MeshBasicMaterial,
-  MeshStandardMaterial,
-  PointLightHelper,
   PointsMaterial,
   Vector3,
 } from "three";
@@ -32,9 +29,9 @@ export const ParticlesBG = () => {
   const particlesGeometry = new BufferGeometry();
   const particlesMaterial = new PointsMaterial({
     // color: "white",
+    // colorWrite: true,
     size: 0.09,
     sizeAttenuation: true,
-    // colorWrite: true,
     transparent: true,
   });
 
@@ -103,8 +100,8 @@ export const ParticlesBG = () => {
           (Math.sin((ix + elapsedTime) * 0.5) * 3.2);
 
         // scales[j] =
-        //   (Math.sin((ix + elapsedTime) * 0.3) + 5) * 0 +
-        //   (Math.sin((ix + elapsedTime) * 0.5) + 5) * 0;
+        //   (Math.sin((ix + elapsedTime) * 0.3) + 5) * 20 +
+        //   (Math.sin((ix + elapsedTime) * 0.5) + 5) * 20;
         i += 3;
         j++;
       }
@@ -118,20 +115,17 @@ export const ParticlesBG = () => {
 
   return (
     <>
-      
       <Center>
-        
         {/* <pointLight ref={light}
           intensity={2}
           position={[0, 10, 20]}
           color={'red'}
         /> */}
         <points
-          scale={new Vector3(1,1,1)}
           args={[particlesGeometry, particlesMaterial]}
           rotation={new Euler(rot.x, rot.y, rot.z)}
         />
-        <OrbitControls enableZoom={true} enableRotate={true} />
+        <OrbitControls enableZoom={false} enableRotate={false} />
       </Center>
     </>
   );

@@ -55,7 +55,7 @@ export const CryptoLogos = () => {
     const solGroup = state.scene.children.filter((g: any) => g.name === 'sol')[0];
     const btcGroup = state.scene.children.filter((g: any) => g.name === 'btc')[0];
     if (!solGroup) {
-      state.scene.add(solSvgGroup)
+      return state.scene.add(solSvgGroup)
     }
     // ethGroup.rotation.y = Math.PI * elTime * .4;
     const curPosYSol = solGroup.position.y;
