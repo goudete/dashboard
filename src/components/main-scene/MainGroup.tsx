@@ -2,25 +2,13 @@ import { AccumulativeShadows, Cylinder, RandomizedLight, softShadows, useHelper 
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useControls } from "leva";
 import React, { useRef } from "react";
-import { BoxGeometry, BoxHelper, Color, CylinderGeometry, DirectionalLightHelper, DoubleSide, Line3, LineDashedMaterial, PerspectiveCamera, PointLightHelper, TextureLoader } from "three";
+import { BoxGeometry, BoxHelper, BufferGeometry, Color, CylinderGeometry, DirectionalLightHelper, DoubleSide, Line3, LineBasicMaterial, LineDashedMaterial, PerspectiveCamera, PointLightHelper, TextureLoader } from "three";
 import { mainMaterial } from "../../materials/main-materials";
 import { Coin } from "./Coin";
 import { CryptoLogos } from "./CryptoLogos";
 import { gsap } from "gsap";
-
-export const Line = () => {
-  const line = new Line3();
-
-  // Build the material with good parameters to animate it.
-  const material = new LineDashedMaterial({
-    transparent: true,
-    scale: 1,
-    color: new Color('#ff0000'),
-  });
-  return (
-    <></>
-  )
-}
+import { LineGeometry } from "three/examples/jsm/lines/LineGeometry";
+import { CustomLine } from "../CustomLine";
 
 export const FirstPlateLayer = () => {
   const [map] = useLoader(TextureLoader, ['matcaps/metall.png']);
@@ -59,6 +47,7 @@ export const FirstPlateLayer = () => {
         // opacity={.4}
       />
     </Cylinder>
+    
 
     {/* <Cylinder 
       args={[12, 12, .2, 4, 4]}
@@ -126,6 +115,7 @@ export function MainGroup() {
       /> */}
       <group ref={mainGroupRef} scale={1.5} position={[22, 2, -10]} rotation={[0, 0, 0]}>
         <CryptoLogos/>
+        <CustomLine/>
         <FirstPlateLayer />
         <Coin />
       </group>

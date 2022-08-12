@@ -32,10 +32,15 @@ export const MainScene = ({}: MainSceneProps) => {
       <div className={styles.canvasHolder}>
 
         <div className={styles.uiHolder}>
-          <h1>
-            Easy fiat payments,<br/>
-            for cryptoholders<br/>and DAO's
-          </h1>
+          <div className={styles.textSection}>
+            <h1>
+              Easy fiat payments,<br/>
+              for cryptoholders<br/>and DAO's
+            </h1>
+            <p>
+              Connect your wallet, top up your balance, order an payment s 
+            </p>
+          </div>
         </div>
 
         <Canvas
