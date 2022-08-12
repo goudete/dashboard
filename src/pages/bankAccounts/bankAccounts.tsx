@@ -1,8 +1,21 @@
 import React from 'react';
+import { bankAccounts } from '../../mockData';
+import { BankAccount } from '../../types/types';
 
-function bankAccounts() {
+import './bankAccounts.scss';
 
-    return <div></div>;
+
+function BankAccounts() {
+
+    return <div className='bankAccounts-container'>
+        {
+            bankAccounts.map((account: BankAccount) => (
+                <div className='bankAccounts-container__bankAccount'>
+                    bank account: {account.DaoId}
+                </div>
+            ))
+        }
+    </div>;
 }
 
-export default bankAccounts;
+export default BankAccounts;

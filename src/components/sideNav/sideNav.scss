@@ -1,0 +1,25 @@
+
+.sideNav-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #816e6e;
+    border-radius: 5px;
+    width: 18%;
+    margin-top: 2em;
+    margin-left: 10em;
+    height: 30em;
+
+    &__daoInfo {
+        margin-top: 20%;
+    }
+
+    &__nav {
+        margin-top: 20%;
+
+        &-navItem {
+            margin: 2em;
+            text-align: left;
+            font-weight: bold;
+        }
+    }
+}

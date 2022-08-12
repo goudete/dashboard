@@ -1,8 +1,23 @@
 import React from 'react';
+import { cards } from '../../mockData';
+import { Card } from '../../types/types';
 
-function cards() {
+import './cards.scss';
 
-    return <div></div>;
+function Cards() {
+
+    return <div className='cards-container'>
+        {
+            cards.map((card: Card) => (
+                <div className='cards-container__card'>
+                    <pre>
+                        card id: {card.DaoId} <br />
+                        bank account id: {card.bankAccountId}
+                    </pre>
+                </div>
+            ))
+        }
+    </div>;
 }
 
-export default cards;
+export default Cards;

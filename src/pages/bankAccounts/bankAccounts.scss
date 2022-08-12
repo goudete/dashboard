@@ -1,0 +1,11 @@
+.bankAccounts-container {
+    width: 60%;
+
+    &__bankAccount {
+        width: 80%;
+        height: 5em;
+        margin: 25px;
+        border: 1px solid #816e6e;
+        border-radius: 5px;
+    }
+}

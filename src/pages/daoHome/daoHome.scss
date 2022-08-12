@@ -1,16 +1,16 @@
 .daoHome-container {
-
-	width: 100%;
+    margin-top: 1em;
 
     &__top {
 		display: flex;
 		flex-direction: row;
+        height: 40%;
 
         &-bankAccounts {
             border-radius: 10px;
             border: 1px solid rgb(129, 110, 110);
             width: 25em;
-            height: 150px;
+            height: 13em;
             margin: 10px;
         }
 
@@ -18,16 +18,20 @@
             border-radius: 10px;
             border: 1px solid rgb(129, 110, 110);
             width: 25em;
-            height: 150px;
+            height: 13em;
             margin: 10px;
         }
     }
 
     &__bottom {
-        border-radius: 10px;
-        border: 1px solid rgb(129, 110, 110);
-        width: 98%;
-        height: 150px;
-        margin: 10px;
+        height: 50%;
+
+        &-transactions {
+            border-radius: 10px;
+            border: 1px solid rgb(129, 110, 110);
+            width: 97%;
+            margin: 10px;
+            height: 100%;
+        }
     }
 }
