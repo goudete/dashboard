@@ -79,7 +79,7 @@ function WalletAuth() {
         alert(err)
       }
     } else {
-      alert('Please download Phantom');
+      alert('Please download Phantom: https://phantom.app/');
     }
   };
 
