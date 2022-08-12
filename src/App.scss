@@ -1,5 +1,5 @@
 .container {
-    background-color: #282c34;
+    background-color: #1E1E1E;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -9,8 +9,6 @@
         display: flex;
         flex-direction: row;
         height: 10%;
-        // width: 100%;
-        border-bottom: 0.5px solid rgb(129, 110, 110);
         font-weight: bold;
 
         &-title {

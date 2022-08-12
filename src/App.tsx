@@ -5,6 +5,8 @@ import {
   PublicKey,
   Transaction,
 } from "@solana/web3.js";
+import mainLogo from './assets/logo.svg';
+import { MainScene } from './components';
 
 import './App.scss';
 
