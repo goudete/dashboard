@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
 import './App.scss';
+import { MainScene } from './components';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       </div>
       <div className="container__body">
         <Outlet />
+        <MainScene/>
       </div>
       <div className="container__footer">
         <p>footer</p>
