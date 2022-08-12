@@ -89,17 +89,15 @@ function App() {
   return (
     <div className="container">
       <div className="container__header">
-        <div className="container__header-title">
-          <div className="logo-holder">
-            <img src={mainLogo}/>
-          </div>
-
-          <nav>
-            <Link to={'daos'}>Daos</Link>
-            <Link to={'individuals'}>Individuals</Link>
-            <Link to={'services'}>Services</Link>
-          </nav>
+        <div className="logo-holder">
+          <img src={mainLogo}/>
         </div>
+        <div className="header-divider"/>
+        <nav>
+          <Link to={'daos'}>Daos</Link>
+          <Link to={'individuals'}>Individuals</Link>
+          <Link to={'services'}>Services</Link>
+        </nav>
       </div>
       <div className="container__body">
         {!mainPage && <Outlet />}

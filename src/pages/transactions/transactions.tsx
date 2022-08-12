@@ -9,8 +9,8 @@ function Transactions() {
 
     return <div className='transactions-container'>
         {
-            transactions.map((transaction: Transaction) => (
-                <div className='transactions-container__transaction'>
+            transactions.map((transaction: Transaction, i: number) => (
+                <div key={i} className='transactions-container__transaction'>
                     <pre>
                         date: {transaction.date} <br />
                         amount: {transaction.amount} <br />

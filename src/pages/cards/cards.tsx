@@ -8,8 +8,8 @@ function Cards() {
 
     return <div className='cards-container'>
         {
-            cards.map((card: Card) => (
-                <div className='cards-container__card'>
+            cards.map((card: Card, i: number) => (
+                <div key={i} className='cards-container__card'>
                     <pre>
                         card id: {card.DaoId} <br />
                         bank account id: {card.bankAccountId}
