@@ -5,8 +5,11 @@ import {
   PublicKey,
   Transaction,
 } from "@solana/web3.js";
+import WalletAuth from './components/walletAuth/walletAuth';
+
 
 import './App.scss';
+
 
 type DisplayEncoding = "utf8" | "hex";
 type PhantomEvent = "disconnect" | "connect" | "accountChanged";
@@ -86,12 +89,7 @@ function App() {
           </Link>
         </div>
         <div className="container__header-connectWalletButton">
-          {!walletKey && (
-              <button onClick={connectWallet}>
-                Connect to Phantom Wallet
-              </button>
-            )
-          }
+          <WalletAuth props={{walletKey, connectWallet}} />
         </div>
       </div>
       <div className="container__body">
