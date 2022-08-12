@@ -8,11 +8,9 @@ import { Link } from "react-router-dom";
 import mainLogo from '../../assets/logo.svg';
 
 type MainSceneProps = {
-  walletKey: any;
-  connectWallet: () => void;
 };
 
-export const MainScene = ({ walletKey, connectWallet }: MainSceneProps) => {
+export const MainScene = ({}: MainSceneProps) => {
   const [isAuth, setIsAuth] = useState(false);
   const pointRef = useRef();
 
@@ -30,28 +28,10 @@ export const MainScene = ({ walletKey, connectWallet }: MainSceneProps) => {
 
   return (
     <>
-      <Leva collapsed />
+      <Leva collapsed hidden/>
       <div className={styles.canvasHolder}>
 
         <div className={styles.uiHolder}>
-          
-          <div className={styles.topSection}>
-            <div className={styles.logo}>
-              <img src={mainLogo}/>
-            </div>
-            <nav>
-              <Link to={'daos'}>Daos</Link>
-              <Link to={'individuals'}>Individuals</Link>
-              <Link to={'services'}>Services</Link>
-            </nav>
-          </div>
-          
-          {!walletKey && (
-            <div className={styles.btn} onClick={connectWallet}>
-              Connect to Phantom Wallet
-            </div>
-          )}
-
           <h1>
             Easy fiat payments,<br/>
             for cryptoholders<br/>and DAO's

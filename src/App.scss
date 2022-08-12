@@ -9,7 +9,12 @@
         display: flex;
         flex-direction: row;
         height: 10%;
+        width: 100%;
+        border-bottom: 0.5px solid rgb(129, 110, 110);
         font-weight: bold;
+        background: transparent;
+        // backdrop-filter: blur(2px);
+        z-index: 10;
 
         &-title {
             margin-left: 11%;

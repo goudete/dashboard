@@ -90,9 +90,15 @@ function App() {
     <div className="container">
       <div className="container__header">
         <div className="container__header-title">
-          <Link to="/daos" className='link'>
+          <div className="logo-holder">
             <img src={mainLogo}/>
-          </Link>
+          </div>
+
+          <nav>
+            <Link to={'daos'}>Daos</Link>
+            <Link to={'individuals'}>Individuals</Link>
+            <Link to={'services'}>Services</Link>
+          </nav>
         </div>
         <div className="container__header-connectWalletButton">
           {!walletKey && (
@@ -105,7 +111,7 @@ function App() {
       </div>
       <div className="container__body">
         {!mainPage && <Outlet />}
-        {mainPage && <MainScene walletKey={walletKey} connectWallet={connectWallet}/>}
+        {mainPage && <MainScene />}
       </div>
     </div>
   );
