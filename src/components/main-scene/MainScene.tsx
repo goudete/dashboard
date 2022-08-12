@@ -4,8 +4,7 @@ import styles from "./main-scene.module.scss";
 import { Leva, useControls } from "leva";
 import { ParticlesBG } from "./ParticlesBG";
 import { MainGroup } from "./MainGroup";
-import { Link } from "react-router-dom";
-import mainLogo from '../../assets/logo.svg';
+import { MainButton } from "../MainButton/MainButton";
 
 type MainSceneProps = {
 };
@@ -40,7 +39,7 @@ export const MainScene = ({}: MainSceneProps) => {
             <p className={'animate__animated animate__fadeInUp'}>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
             </p>
-            
+            <MainButton title={'Start now'} onClick={() => null} className={'animate__animated animate__fadeInUp'}/>
           </div>
         </div>
 
@@ -53,7 +52,7 @@ export const MainScene = ({}: MainSceneProps) => {
             needsUpdate: true,
           }}
         >
-          <axesHelper scale={12} />
+          {/* <axesHelper scale={12} /> */}
           <color attach="background" args={["#1e1e1e"]} />
           {/* <ambientLight intensity={.2}/> */}
           {/* <spotLight position={[10, 20, 10]} angle={0.25} penumbra={1.2} /> */}

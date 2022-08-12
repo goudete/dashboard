@@ -6,6 +6,7 @@ import {
 } from "@solana/web3.js";
 
 import './walletAuth.scss';
+import { MainButton } from "../MainButton/MainButton";
 
 
 type DisplayEncoding = "utf8" | "hex";
@@ -102,10 +103,10 @@ function WalletAuth() {
     }
   }, []);
 
-  return <div className="connectWallet" onClick={walletClick}>
-    {walletKey && <span className="connectWallet-text">{walletKey.shortWalletKey}</span>}
-    {!walletKey && <span className="connectWallet-text">connect wallet</span>}
-  </div>;
+  return <MainButton
+    onClick={walletClick}
+    title={walletKey ? walletKey.shortWalletKey : 'connect wallet'}
+  />;
 }
 
 export default WalletAuth;
