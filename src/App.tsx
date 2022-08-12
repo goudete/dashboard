@@ -31,9 +31,6 @@ function App() {
             <Link to={'services'}>Services</Link>
           </nav>
         </div>
-        <div className="container__header-connectWalletButton">
-          <WalletAuth />
-        </div>
       </div>
       <div className="container__body">
         {!mainPage && <Outlet />}

@@ -9,8 +9,8 @@ function BankAccounts() {
 
     return <div className='bankAccounts-container'>
         {
-            bankAccounts.map((account: BankAccount) => (
-                <div className='bankAccounts-container__bankAccount'>
+            bankAccounts.map((account: BankAccount, i: number) => (
+                <div key={i} className='bankAccounts-container__bankAccount'>
                     bank account: {account.DaoId}
                 </div>
             ))
