@@ -12,28 +12,21 @@ import { CustomLine } from "../CustomLine";
 
 export const FirstPlateLayer = () => {
   const [map] = useLoader(TextureLoader, ['matcaps/metall.png']);
-  const cylRef = useRef<any>();
   const cylRef1 = useRef<any>();
   // const mat = mainMaterial;
 
   useFrame((state, delta) => {
     const elTime = state.clock.getElapsedTime();
-    // cylRef.current.rotation.y = -Math.PI * elTime * .062
-    // cylRef.current.position.y = Math.sin(elTime * 1.2) * 2
 
-    cylRef1.current.rotation.y = Math.PI * elTime * .082
+    // cylRef1.current.rotation.y = Math.PI * elTime * .082
   })
 
   return (
     <>
     {/* <axesHelper scale={10}/> */}
-    {/* <mesh position={[0, 1, 0]} castShadow>
-      <meshStandardMaterial/>
-      <boxGeometry/>
-    </mesh> */}
     <Cylinder 
       args={[18, 18, .3, 4, 4]}
-      position={[0,-.7,0]}
+      position={[0, -.7, 0]}
       ref={cylRef1}
       rotation={[0,0,0]}
       receiveShadow
@@ -46,23 +39,7 @@ export const FirstPlateLayer = () => {
         roughness={0}
         // opacity={.4}
       />
-    </Cylinder>
-    
-
-    {/* <Cylinder 
-      args={[12, 12, .2, 4, 4]}
-      position={[-50, 0, 10]}
-      ref={cylRef}
-      rotation={[0,0,0]}
-      receiveShadow
-    >
-      <meshStandardMaterial
-        color={'#ffffff'}
-        metalness={0}
-        roughness={0}
-        toneMapped={false}
-      />
-    </Cylinder> */}
+    </Cylinder>  
     </>
 
   )
@@ -84,8 +61,6 @@ export function MainGroup() {
     },
     plPos: {
       value: {"x":31,"y":3.5,"z":-36},
-      // value: {x: 0, y: 0, z: 0},
-      
       step: .5
     }
   })
@@ -107,15 +82,10 @@ export function MainGroup() {
         position={[plPos.x, plPos.y, plPos.z]}
         rotation={[plRot.x, plRot.y, plRot.z]}
       />
-      {/* <pointLight ref={pointRef} castShadow
-        color={'#fff'}
-        intensity={.1}
-        position={[-plPos.x, plPos.y, -plPos.z]}
-        rotation={[plRot.x, plRot.y, plRot.z]}
-      /> */}
+
       <group ref={mainGroupRef} scale={1.5} position={[22, 2, -10]} rotation={[0, 0, 0]}>
         <CryptoLogos/>
-        <CustomLine/>
+        {/* <CustomLine/> */}
         <FirstPlateLayer />
         <Coin />
       </group>

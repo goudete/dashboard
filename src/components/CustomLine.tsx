@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Color, LineBasicMaterial, LineDashedMaterial } from 'three';
+import { Color, LineBasicMaterial, LineDashedMaterial, MeshStandardMaterial } from 'three';
 import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry';
 
 const w = 12;
@@ -33,6 +33,8 @@ export const CustomLine = () => {
   const lineGeometery = new LineGeometry();
   const lineMaterial = new LineBasicMaterial();
 
+  const points = [];
+
   // Build the material with good parameters to animate it.
   const material = new LineDashedMaterial({
     transparent: true,
@@ -41,14 +43,10 @@ export const CustomLine = () => {
   });
   return (
     <group>
-      {points.map((point, i) => (null
-        // <Gridline
-        //   key={i}
-        //   points={[point.start, point.end]}
-        //   shouldDraw={shouldDraw}
-        //   delay={delays[i]}
-        // />
-      ))}
+      <mesh>
+        <meshStandardMaterial color={'blue'}/>
+        <boxGeometry/>
+      </mesh>
     </group>
   )
 }
