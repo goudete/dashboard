@@ -38,13 +38,13 @@ export const FirstPlateLayer = () => {
 
   return (
     <>
-    <axesHelper scale={10}/>
+    {/* <axesHelper scale={10}/> */}
     {/* <mesh position={[0, 1, 0]} castShadow>
       <meshStandardMaterial/>
       <boxGeometry/>
     </mesh> */}
     <Cylinder 
-      args={[12, 12, .3, 4, 4]}
+      args={[18, 18, .3, 4, 4]}
       position={[0,-.7,0]}
       ref={cylRef1}
       rotation={[0,0,0]}
@@ -94,13 +94,13 @@ export function MainGroup() {
       step: .01
     },
     plPos: {
-      value: {"x":31,"y":18,"z":-36},
+      value: {"x":31,"y":3.5,"z":-36},
       // value: {x: 0, y: 0, z: 0},
       
       step: .5
     }
   })
-  useHelper(pointRef, PointLightHelper);
+  // useHelper(pointRef, PointLightHelper);
   // useHelper(mainGroupRef, BoxHelper);
 
   useFrame(() => {

@@ -54,23 +54,23 @@ export const CryptoLogos = () => {
     const ethGroup = state.scene.children.filter((g: any) => g.name === 'eth')[0];
     const solGroup = state.scene.children.filter((g: any) => g.name === 'sol')[0];
     const btcGroup = state.scene.children.filter((g: any) => g.name === 'btc')[0];
-    if (!solGroup || !ethGroup) {
-      state.scene.add(ethSvgGroup, solSvgGroup, btcSvgGroup)
+    if (!solGroup) {
+      state.scene.add(solSvgGroup)
     }
     // ethGroup.rotation.y = Math.PI * elTime * .4;
     const curPosYSol = solGroup.position.y;
-    const curPosYBtc = btcGroup.position.y;
-    const curPosYEth = ethGroup.position.y;
+    // const curPosYBtc = btcGroup.position.y;
+    // const curPosYEth = ethGroup.position.y;
     // logoMaterial.opacity = Math.sin(elTime * .2) * 4
     
     solGroup.rotation.y = -Math.PI * elTime * .4;
     solGroup.position.y = curPosYSol < 12 ? curPosYSol + (elTime * .22) : 12;
 
-    ethGroup.rotation.y = Math.PI * elTime * .4;
-    ethGroup.position.y = curPosYEth < 12 ? curPosYEth + (elTime * .28) : 12;
+    // ethGroup.rotation.y = Math.PI * elTime * .4;
+    // ethGroup.position.y = curPosYEth < 12 ? curPosYEth + (elTime * .28) : 12;
 
-    btcGroup.rotation.y = -Math.PI * elTime * .4;
-    btcGroup.position.y = Math.sin(elTime * .8) * 16 //curPosYBtc < 16 ? curPosYBtc + (elTime * .28) : 16;
+    // btcGroup.rotation.y = -Math.PI * elTime * .4;
+    // btcGroup.position.y = Math.sin(elTime * .8) * 16 //curPosYBtc < 16 ? curPosYBtc + (elTime * .28) : 16;
   })
 
   return (

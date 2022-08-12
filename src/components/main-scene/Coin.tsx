@@ -50,7 +50,7 @@ export function Coin() {
       min: 0,
     },
     recPos: {
-      value: { x: 0, y: 4.5, z: 14 },
+      value: { x: 0, y: 4.5, z: 20 },
       min: -100,
       max: 100,
       step: 0.5,
@@ -70,7 +70,7 @@ export function Coin() {
       min: 0,
     },
     recPos2: {
-      value: { x: -12, y: 11, z: -14 },
+      value: { x: -12, y: 11, z: -20 },
       min: -100,
       max: 100,
       step: 0.5,
