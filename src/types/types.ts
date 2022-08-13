@@ -1,8 +1,16 @@
+
 export interface Dao {
-    id: string,
-	name: string,
-	bankAccounts?: BankAccount[],
-	cards?: Card[]
+    symbol?: string | undefined,
+    displayName?: string | undefined,
+    programId?: string | undefined,
+    realmId?: string | undefined,
+    bannerImage?: string | undefined,
+    ogImage?: string | undefined,
+    sharedWalletId?: string | undefined,
+    sortRank?: number | undefined,
+    keywords?: string | undefined,
+    twitter?: string | undefined,
+    website?: string | undefined
 }
 
 export interface BankAccount {

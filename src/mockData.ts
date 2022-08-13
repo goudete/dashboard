@@ -1,27 +1,27 @@
 import { Dao, Transaction, Card, BankAccount } from "./types/types";
 
-const mockDaos: Dao[] = [
-  {
-    id: "1",
-    name: "new-brex",
-  },
-  {
-    id: "2",
-    name: "launch-house",
-  },
-  {
-    id: "3",
-    name: "nyc-dao",
-  },
-  {
-    id: "4",
-    name: "empire-dao",
-  },
-  {
-    id: "5",
-    name: "poop-dao",
-  },
-];
+// const mockDaos: Dao[] = [
+//   {
+//     id: "1",
+//     name: "new-brex",
+//   },
+//   {
+//     id: "2",
+//     name: "launch-house",
+//   },
+//   {
+//     id: "3",
+//     name: "nyc-dao",
+//   },
+//   {
+//     id: "4",
+//     name: "empire-dao",
+//   },
+//   {
+//     id: "5",
+//     name: "poop-dao",
+//   },
+// ];
 
 const bankAccounts: BankAccount[] = [
   {
@@ -65,4 +65,5 @@ const cards: Card[] = [
   },
 ];
 
-export { mockDaos, bankAccounts, transactions, cards };
+// export { mockDaos, bankAccounts, transactions, cards };
+export { bankAccounts, transactions, cards };
