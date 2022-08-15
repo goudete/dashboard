@@ -22,6 +22,7 @@ export interface BankAccount {
     balance?: string;
     currency?: '€' | '$' | '£',
     amount?: number,
+    title?: string,
 }
 
 export interface Card {
@@ -35,5 +36,7 @@ export interface Card {
 export interface Transaction {
     date: number,
     amount: number,
-    name: string,
+    name?: string,
+    hash?: string,
+    type: 'blockchain' | 'fiat'
 }

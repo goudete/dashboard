@@ -43,6 +43,21 @@ function DaoHome() {
             {bankAccounts.map((el, i) => (
               <div className="list-item" key={el.accountNumber}>
                 <div className={"part"}>
+                  {i === 0 && <>
+                    <div className="list-label ac-label">
+                      <span className="title">Title</span>
+                      <span className="num">Account #</span>
+                      <span className="bal">Balance</span>
+                   </div>
+                  </>}
+                  
+                  <div className="list-value ac-val">
+                    <span className="title">{el.title}</span>
+                    <span className="num">{el.accountNumber}</span>
+                    <span className="bal"><span>{el.currency}</span>{el.amount?.toFixed(2)}</span>
+                  </div>
+                </div>
+                {/* <div className={"part"}>
                   {i === 0 && <div className="list-label">Account #</div>}
                   <div className="list-value">{el.accountNumber}</div>
                 </div>
@@ -52,7 +67,7 @@ function DaoHome() {
                     <span>{el.currency} </span>
                     {el.amount?.toFixed(2)}
                   </div>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
@@ -97,15 +112,15 @@ function DaoHome() {
                   {i === 0 && (
                     <div className="list-label tr-label">
                       <span className="date">Date</span>
-                      <span className="title">Title</span>
-                      <span className="amount">Amount</span>
+                      <span className="hash-val">Title / Hash</span>
+                      <span className="type">Type</span>
+                      <span className="sum">Amount</span>
                     </div>
                   )}
                   <div className="list-value tr-val">
-                    <span className="date">
-                      {dayjs(el.date).format("MMM DD, YYYY")}
-                    </span>
-                    <span className="val">{el.name}</span>
+                    <span className="date">{dayjs(el.date).format("MMM DD, YYYY")}</span>
+                    <span className="hash-val">{el.name ? el.name : el.hash}</span>
+                    <span className="type">{el.type}</span>
                     <span className="sum">${el.amount.toFixed(2)}</span>
                   </div>
                 </div>
