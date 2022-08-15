@@ -25,89 +25,7 @@
 .daoHome-container {
     display: flex;
     flex-flow: column;
-    width: 100%;
-
-    .list-holder {
-        height: 100%;
-        position: relative;
-        text-align: left;
-        padding-bottom: 60px;
-
-        opacity: 0;
-        animation: fadeIn .8s ease forwards;
-        animation-delay: .8s !important;
-
-
-        .list-item {
-            display: flex;
-            margin-bottom: 4px;
-
-            .part {
-                margin-right: 20px;
-                font-size: 16px;
-                min-width: 22%;
-
-                &.fullPart {
-                    width: 100%;
-                    margin-right: 0;
-                    border-bottom: 1px solid rgba(255, 255, 255, .3);
-                    padding-bottom: 4px;
-                }
-            }
-
-            .list-label {
-                opacity: .8;
-                font-size: 10px;
-                font-weight: 300;
-                margin: 6px 0;
-
-                &.tr-label {
-                    display: flex;
-                    justify-content: space-between;
-
-                    span {
-                        &.date {
-                            width: 24%;
-                        }
-
-                        &.title {
-                            width: 100%;
-                        }
-                    }
-                }
-            }
-
-            .list-value {
-                padding-bottom: 2px;
-
-                span {
-                    opacity: .7;
-
-                    &.date {
-                        width: 24%;
-                        opacity: 1;
-                    }
-
-                    &.val {
-                        text-align: left;
-                        opacity: 1;
-                        width: 100%;
-                    }
-
-                    &.sum {
-                        text-align: right;
-                        opacity: 1;
-                    }
-                }
-
-                &.tr-val {
-                    display: flex;
-                    justify-content: space-between;
-                    width: 100%;
-                }
-            }
-        }
-    }
+    width: 100%;    
 
     .actions {
         position: absolute;
@@ -257,5 +175,88 @@
 @keyframes fadeIn {
     to {
         opacity: 1
+    }
+}
+
+
+.list-holder {
+    height: 100%;
+    position: relative;
+    text-align: left;
+    padding-bottom: 60px;
+
+    opacity: 0;
+    animation: fadeIn .8s ease forwards;
+    animation-delay: .8s !important;
+
+
+    .list-item {
+        display: flex;
+        margin-bottom: 4px;
+
+        .part {
+            margin-right: 20px;
+            font-size: 16px;
+            min-width: 22%;
+
+            &.fullPart {
+                width: 100%;
+                margin-right: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, .3);
+                padding-bottom: 4px;
+            }
+        }
+
+        .list-label {
+            opacity: .8;
+            font-size: 10px;
+            font-weight: 300;
+            margin: 6px 0;
+
+            &.tr-label {
+                display: flex;
+                justify-content: space-between;
+
+                span {
+                    &.date {
+                        width: 24%;
+                    }
+
+                    &.title {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .list-value {
+            padding-bottom: 2px;
+
+            span {
+                opacity: .7;
+
+                &.date {
+                    width: 24%;
+                    opacity: 1;
+                }
+
+                &.val {
+                    text-align: left;
+                    opacity: 1;
+                    width: 100%;
+                }
+
+                &.sum {
+                    text-align: right;
+                    opacity: 1;
+                }
+            }
+
+            &.tr-val {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
     }
 }
