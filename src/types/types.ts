@@ -20,7 +20,7 @@ export interface BankAccount {
     DaoId: string,
     accountNumber?: string;
     balance?: string;
-    currency?: 'eur' | 'usd' | 'gbp',
+    currency?: '€' | '$' | '£',
     amount?: number,
 }
 

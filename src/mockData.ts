@@ -27,19 +27,19 @@ const mockBankAccounts: BankAccount[] = [
   {
     DaoId: "1",
     accountNumber: '44482030',
-    currency: 'usd',
+    currency: '$',
     amount: 11256,
   },
   {
     DaoId: "2",
     accountNumber: '34982225',
-    currency: 'gbp',
+    currency: '£',
     amount: 2132,
   },
   {
     DaoId: "3",
     accountNumber: '08793111',
-    currency: 'eur',
+    currency: '€',
     amount: 1000,
   },
 ];
