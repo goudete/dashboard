@@ -59,6 +59,8 @@ function DaoHome() {
           <h4>Cards</h4>
           <div className="list-holder">
             <Swiper
+              width={330}
+              style={{width: '330px'}}
               pagination
               navigation
               modules={[Navigation, Pagination]}
