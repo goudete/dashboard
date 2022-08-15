@@ -166,7 +166,7 @@ export const RequestModal = ({show, closeModal}: any) => {
   const holderClasses = classNames(['modal-holder animate__animated', show ? 'animate__fadeInUp' : 'animate__fadeOutDown']);
 
   return (
-    <div className={backdropClasses}>
+    <div className={backdropClasses} onClick={() => closeModal()}>
       <div className={holderClasses}>
         <h4>Create new account</h4>
 
