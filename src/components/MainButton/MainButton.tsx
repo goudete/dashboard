@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './main-button.module.scss';
 import classnames from 'classnames';
-import classNames from 'classnames';
 
 type MainButtonProps = {
   title: string,
@@ -9,10 +8,11 @@ type MainButtonProps = {
   disabled?: boolean,
   className?: string,
   small?: boolean,
+  inverse?: boolean,
 }
 
-export const MainButton = ({title, onClick, disabled, className, small}: MainButtonProps) => {
-  const classes = classnames([styles.btnHolder, className ? className : '', small ? styles.smallBtn : ''])
+export const MainButton = ({title, onClick, disabled, className, small, inverse}: MainButtonProps) => {
+  const classes = classnames([styles.btnHolder, className ? className : '', small ? styles.smallBtn : '', inverse ? styles.inverseColors : ''])
   return (
     <div onClick={onClick} className={classes}>
       {title}

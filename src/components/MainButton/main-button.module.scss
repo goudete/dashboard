@@ -21,6 +21,14 @@
     text-transform: capitalize;
     margin: 10px;
   }
+  &.inverseColors{
+    border: 1px solid rgba(0, 0, 0, .3);
+    color: #000;
+    &:hover{
+      color: #fff;
+      background: #000;
+    }
+  }
 
   &:hover {
     background-position: left;

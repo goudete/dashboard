@@ -35,6 +35,7 @@ root.render(
               <Route path=":daoId/cards" element={<Cards />} />
               <Route path=":daoId/transactions" element={<Transactions />} />
             </Route>
+            <Route path='*' element={<>Not found</>}/>
           </Route>
         </Routes>
       </BrowserRouter>
