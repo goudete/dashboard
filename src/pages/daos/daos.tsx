@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { MainButton } from "../../components";
-import { mockDaos } from "../../mockData";
+import { useNavigate } from "react-router-dom";
 import { getAllDaos } from "../../services/daos.service";
 import { DaoType } from "../../types/types";
 import mockDaoImage from '../../assets/dao-mock-logo.png'

@@ -65,4 +65,5 @@ const cards: Card[] = [
   },
 ];
 
-export { mockDaos, bankAccounts, transactions, cards };
+// export { mockDaos, bankAccounts, transactions, cards };
+export { bankAccounts, transactions, cards };
