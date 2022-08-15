@@ -5,13 +5,14 @@ import { Leva, useControls } from "leva";
 import { ParticlesBG } from "./ParticlesBG";
 import { MainGroup } from "./MainGroup";
 import { MainButton } from "../MainButton/MainButton";
+import { Navigate, useNavigate } from "react-router-dom";
 
-type MainSceneProps = {
-};
+type MainSceneProps = {};
 
 export const MainScene = ({}: MainSceneProps) => {
   const [isAuth, setIsAuth] = useState(false);
   const pointRef = useRef();
+  let navigate = useNavigate();
 
   const { position, color } = useControls({
     position: {
@@ -27,19 +28,22 @@ export const MainScene = ({}: MainSceneProps) => {
 
   return (
     <>
-      <Leva collapsed hidden/>
+      <Leva collapsed hidden />
       <div className={styles.canvasHolder}>
-
         <div className={styles.uiHolder}>
           <div className={styles.textSection}>
-            <h1 className={'animate__animated animate__fadeInDown'}>
-              Easy fiat payments,<br/>
-              for cryptoholders<br/>and DAO's
+            <h1 className={"animate__animated animate__fadeInDown"}>
+              Offramping made easy for DAOs
             </h1>
-            <p className={'animate__animated animate__fadeInUp'}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            <p className={"animate__animated animate__fadeInUp"}>
+              Spend treasury funds directly via virtual cards and virtual bank
+              accounts–powered by Stripe.
             </p>
-            <MainButton title={'Start now'} onClick={() => null} className={'animate__animated animate__fadeInUp'}/>
+            <MainButton
+              title={"Explore"}
+              onClick={() => navigate("/daos")}
+              className={"animate__animated animate__fadeInUp"}
+            />
           </div>
         </div>
 
