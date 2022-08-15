@@ -1,34 +1,80 @@
 @mixin blockBase {
     border-radius: 10px;
-    border: 1px solid rgb(129, 110, 110);
+    border: 1px solid rgba(255, 255, 255, .3);
 }
 
 .daoHome-container {
     display: flex;
     flex-flow: column;
+    width: 100%;
+
+    .list-holder {
+        height: 100%;
+        position: relative;
+        text-align: left;
+        padding: 10px;
+        padding-bottom: 60px;
+
+        .list {
+            display: flex;
+
+            .part {
+                margin-right: 20px;
+                font-size: 14px;
+                min-width: 18%;
+            }
+
+            .list-label {
+                opacity: .8;
+                font-size: 10px;
+                font-weight: 300;
+                margin-bottom: 10px;
+            }
+
+            .list-value {
+                margin-bottom: 4px;
+                span {
+                    opacity: .8;
+                    font-size: 12px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    .actions {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+    }
 
     &__top {
-		display: flex;
-		flex-direction: row;
-        
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+
 
         &-bankAccounts {
             @include blockBase();
-            
+            width: 50%;
+            margin-right: 20px;
+            position: relative
         }
 
         &-cards {
             @include blockBase();
-            
+            width: 50%;
+            position: relative;
+            animation-delay: .2s;
         }
     }
 
     &__bottom {
-        
+
 
         &-transactions {
             @include blockBase();
-            
+
         }
     }
 }

@@ -18,6 +18,10 @@ export interface DaoType {
 
 export interface BankAccount {
     DaoId: string,
+    accountNumber?: string;
+    balance?: string;
+    currency?: 'eur' | 'usd' | 'gbp',
+    amount?: number,
 }
 
 export interface Card {
@@ -31,5 +35,5 @@ export interface Card {
 export interface Transaction {
     date: number,
     amount: number,
-    name: string
+    name: string,
 }

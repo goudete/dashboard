@@ -23,19 +23,28 @@ const mockDaos: DaoType[] = [
   },
 ];
 
-const bankAccounts: BankAccount[] = [
+const mockBankAccounts: BankAccount[] = [
   {
     DaoId: "1",
+    accountNumber: '44482030',
+    currency: 'usd',
+    amount: 11256,
   },
   {
     DaoId: "2",
+    accountNumber: '34982225',
+    currency: 'gbp',
+    amount: 2132,
   },
   {
     DaoId: "3",
+    accountNumber: '08793111',
+    currency: 'eur',
+    amount: 1000,
   },
 ];
 
-const transactions: Transaction[] = [
+const mockTransactions: Transaction[] = [
   {
     date: 1659850380000,
     amount: 9.99,
@@ -48,7 +57,7 @@ const transactions: Transaction[] = [
   },
 ];
 
-const cards: Card[] = [
+const mockCards: Card[] = [
   {
     DaoId: "1",
     owners: "enrique",
@@ -66,4 +75,4 @@ const cards: Card[] = [
 ];
 
 // export { mockDaos, bankAccounts, transactions, cards };
-export { bankAccounts, transactions, cards };
+export { mockBankAccounts, mockTransactions, mockCards };

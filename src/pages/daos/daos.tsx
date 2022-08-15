@@ -13,8 +13,8 @@ function Daos() {
 
   useEffect(() => {
     getAllDaos().then(resp => {
-      setDaoList(resp.realms);
-      setFilteredDaos(resp.realms)
+      setDaoList(resp);
+      setFilteredDaos(resp)
     })
   }, [])
 
@@ -40,10 +40,11 @@ function Daos() {
         <div className={'search-btn'}>Search</div>
       </div>
       <div className={'daos-container'}>
-      {daoList && filteredDaos.map((dao: DaoType) => (
+      {daoList && filteredDaos.map((dao: DaoType, i: number) => (
         <div
           key={dao.realmId}
-          className={"daos-container__dao"}
+          className={"daos-container__dao animate__animated animate__fadeInUp"}
+          style={{animationDelay: .04 * i +'s'}}
           onClick={() => nav(`/dao/${dao.realmId}`)}
         >
           <div className="avatar-holder">

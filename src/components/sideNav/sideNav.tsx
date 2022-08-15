@@ -10,7 +10,7 @@ function SideNav() {
     const {currentDao} = useContext(DaoContext) as DaoCtx;
     const nav = useNavigate();
 
-    return <div className="sideNav-container">
+    return <div className="sideNav-container animate__animated animate__fadeInLeft">
         <div className="sideNav-container__daoInfo" onClick={() => nav(`/dao/${currentDao?.realmId}`)}>
             <div className="avatar">
                 <img src={currentDao?.ogImage ? currentDao?.ogImage : mockDaoImage} />

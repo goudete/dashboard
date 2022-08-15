@@ -38,8 +38,8 @@
             background: #fff;
             margin-left: 38px;
             transform: translateY(-200px);
-            animation: slideIn .8s ease-in-out forwards;
-            animation-delay: .2s;
+            animation: slideIn .6s ease forwards;
+            // animation-delay: .2s;
             &:after{
                 content: '';
                 position: absolute;
@@ -50,8 +50,8 @@
                 bottom: 0;
                 left: -2px;
                 opacity: 0;
-                animation: fadeIn .3s ease-in-out forwards;
-                animation-delay: 1s;
+                animation: fadeIn .2s ease forwards;
+                animation-delay: .6s;
             }
         }
 

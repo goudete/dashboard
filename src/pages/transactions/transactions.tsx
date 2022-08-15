@@ -1,5 +1,5 @@
 import React from 'react';
-import { transactions } from '../../mockData';
+import { mockTransactions } from '../../mockData';
 import { Transaction } from '../../types/types';
 
 import './transactions.scss';
@@ -9,7 +9,7 @@ function Transactions() {
 
     return <div className='transactions-container'>
         {
-            transactions.map((transaction: Transaction, i: number) => (
+            mockTransactions.map((transaction: Transaction, i: number) => (
                 <div key={i} className='transactions-container__transaction'>
                     <pre>
                         date: {transaction.date} <br />
