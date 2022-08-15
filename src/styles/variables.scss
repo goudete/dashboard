@@ -1,0 +1,21 @@
+$desktop-4k-query: "(max-width: 3840px)";
+$desktop-3k-query: "(max-width: 3072px)";
+$desktop-wqxga-query: "(max-width: 2560px)";
+$desktop-l-query: "(max-width: 1920px)";
+$desktop-m-query: "(max-width: 1680px)";
+$desktop-s-query: "(max-width: 1366px)";
+$laptop-query: "(max-width: 1280px)";
+$laptop-s-query: "(max-width: 1440px)";
+$tablet-land-m: "(max-width: 1260px)";
+$tablet-land: "(max-width: 1024px)";
+$tablet: "(max-width: 990px)";
+$phone-query: "(max-width: 739px)";
+$phone-s-query: "(max-width: 640px)";
+
+$iPad-query: "(min-device-width : 768px) and (max-device-width : 1024px)";
+$iPad-air-query: "(min-width: 820px) and (max-width: 1180px)";
+$iPad-air-port-query: "(min-width: 820px) and (orientation: portrait)";
+$iPadPortrait-query: "(min-device-width : 768px)";
+$iPadLand-query: "(min-device-width : 1024px)";
+
+$iPhone13-query: "(min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3)"

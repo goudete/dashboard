@@ -1,8 +1,13 @@
 export interface Dao {
-    id: string,
-	name: string,
+    id?: string,
+	name?: string,
 	bankAccounts?: BankAccount[],
-	cards?: Card[]
+	cards?: Card[];
+    displayName?: string;
+    ogImage?: string;
+    programId?: string;
+    realmId?: string;
+    symbol?: string;
 }
 
 export interface BankAccount {

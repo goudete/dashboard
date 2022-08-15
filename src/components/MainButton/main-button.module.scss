@@ -12,6 +12,15 @@
   text-transform: uppercase;
   animation-delay: .8s;
   user-select: none;
+  font-weight: normal;
+  &.smallBtn{
+    padding: 6px 12px;
+    line-height: 14px;
+    font-size: 14px;
+    width: auto;
+    text-transform: capitalize;
+    margin: 10px;
+  }
 
   &:hover {
     background-position: left;

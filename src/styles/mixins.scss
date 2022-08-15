@@ -1,0 +1,126 @@
+@import './variables.scss';
+@mixin desktop-4k() {
+  @media #{$desktop-4k-query} {
+    @content;
+  }
+}
+
+@mixin desktop-3k() {
+  @media #{$desktop-3k-query} {
+    @content;
+  }
+}
+
+@mixin desktop-wqxga() {
+  @media #{$desktop-wqxga-query} {
+    @content
+  }
+}
+
+@mixin desktop-l() {
+  @media #{$desktop-l-query} {
+    @content;
+  }
+}
+
+@mixin desktop-m() {
+  @media #{$desktop-m-query} {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media #{$laptop-query} {
+    @content;
+  }
+}
+
+@mixin laptop-s() {
+  @media #{$laptop-s-query} {
+    @content;
+  }
+}
+
+@mixin desktop-l() {
+  @media #{$desktop-l-query} {
+    @content;
+  }
+}
+
+@mixin desktop-m() {
+  @media #{$desktop-m-query} {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media #{$laptop-query} {
+    @content;
+  }
+}
+
+@mixin laptop-s() {
+  @media #{$laptop-s-query} {
+    @content;
+  }
+}
+
+@mixin tablet($size) {
+  @if($size) {
+    @media #{$size} {
+      @content;
+    }
+  } @else {
+    @media #{$tablet-land} {
+      @content;
+    }
+  }
+}
+
+@mixin iPad() {
+  @media #{$iPad-query} {
+    @content;
+  }
+}
+
+@mixin iPadAir {
+  @media #{$iPad-air-query} {
+    @content;
+  }
+}
+
+@mixin iPadAirPortrait {
+  @media #{$iPad-air-port-query} {
+    @content;
+  }
+}
+
+@mixin iPadPortrait() {
+  @media #{$iPadPortrait-query} {
+    @content;
+  }
+}
+
+@mixin iPadLand() {
+  @media #{$iPadLand-query} {
+    @content;
+  }
+}
+
+@mixin phone() {
+  @media #{$phone-query} {
+    @content;
+  }
+}
+
+@mixin phone-s() {
+  @media #{$phone-s-query} {
+    @content;
+  }
+}
+
+@mixin iPhone13 {
+  @media #{$iPhone13-query} {
+    @content;
+  }
+}

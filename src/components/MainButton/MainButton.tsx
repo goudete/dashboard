@@ -8,10 +8,11 @@ type MainButtonProps = {
   onClick: () => void,
   disabled?: boolean,
   className?: string,
+  small?: boolean,
 }
 
-export const MainButton = ({title, onClick, disabled, className}: MainButtonProps) => {
-  const classes = classnames([styles.btnHolder, className ? className : ''])
+export const MainButton = ({title, onClick, disabled, className, small}: MainButtonProps) => {
+  const classes = classnames([styles.btnHolder, className ? className : '', small ? styles.smallBtn : ''])
   return (
     <div onClick={onClick} className={classes}>
       {title}
