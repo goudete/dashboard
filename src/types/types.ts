@@ -1,4 +1,4 @@
-export interface Dao {
+export interface DaoType {
     id?: string,
 	name?: string,
 	bankAccounts?: BankAccount[],

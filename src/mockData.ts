@@ -1,6 +1,6 @@
-import { Dao, Transaction, Card, BankAccount } from "./types/types";
+import { DaoType, Transaction, Card, BankAccount } from "./types/types";
 
-const mockDaos: Dao[] = [
+const mockDaos: DaoType[] = [
   {
     id: "1",
     name: "new-brex",

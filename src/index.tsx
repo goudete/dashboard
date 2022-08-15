@@ -15,6 +15,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import { DaoProvider } from './contexts/DaoContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -22,20 +23,22 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route path="stripeTest" element={<StripeTest />} />
-          <Route path="daos" element={<Daos />} />
-          <Route path="dao" element={<Dao />}>
-            <Route path=":daoId" element={<DaoHome />} />
-            <Route path="bankAccounts" element={<BankAccounts />} />
-            <Route path="cards" element={<Cards />} />
-            <Route path="transactions" element={<Transactions />} />
+    <DaoProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route path="stripeTest" element={<StripeTest />} />
+            <Route path="daos" element={<Daos />} />
+            <Route path="dao" element={<Dao />}>
+              <Route path=":daoId" element={<DaoHome />} />
+              <Route path=":daoId/bankAccounts" element={<BankAccounts />} />
+              <Route path=":daoId/cards" element={<Cards />} />
+              <Route path=":daoId/transactions" element={<Transactions />} />
+            </Route>
           </Route>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </DaoProvider>
   </React.StrictMode>
 );
 

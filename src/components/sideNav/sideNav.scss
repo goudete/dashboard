@@ -4,22 +4,80 @@
     flex-direction: column;
     border: 1px solid #816e6e;
     border-radius: 5px;
-    width: 18%;
-    margin-top: 2em;
-    margin-left: 10em;
-    height: 30em;
+    width: 20%;
+    min-height: 30em;
 
     &__daoInfo {
-        margin-top: 20%;
+        padding: 12px 20px;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        .avatar{
+            height: 60px;
+            width: 60px;
+            margin-bottom: 10px;
+            // border: 1px solid red;
+            border-radius: 100%;
+            overflow: hidden;
+
+            img{
+                max-width: 100%;
+            }
+        }
+        .rid{
+            width: 80%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            border: 1px solid rgba(255,255,255,.3);
+            font-size: 14px;
+            padding: 2px 6px;
+            border-radius: 20px;
+            margin: 10px 0;
+        }
     }
 
     &__nav {
         margin-top: 20%;
+        nav{
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            a.link{
+                width: 100%;
+                padding: 10px 0;
+                position: relative;
+                padding-left: 12px;
+                transition: all .32s ease;
+                text-align: left;
+                &::before{
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 0;
+                    transition: all .32s ease;
+                    background: #fff;
+                }
+                &:hover{
+                    &::before{
+                        width: 4px;
+                    }
+                }
+                &.active{
+                    &::before{
+                        width: 4px;
+                    }    
+                }
+            }
+        }
 
         &-navItem {
-            margin: 2em;
-            text-align: left;
-            font-weight: bold;
+            
         }
     }
 }

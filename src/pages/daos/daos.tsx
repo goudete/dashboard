@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { MainButton } from "../../components";
 import { mockDaos } from "../../mockData";
 import { getAllDaos } from "../../services/daos.service";
-import { Dao } from "../../types/types";
+import { DaoType } from "../../types/types";
 import mockDaoImage from '../../assets/dao-mock-logo.png'
 
 import "./daos.scss";
@@ -42,7 +42,7 @@ function Daos() {
         <div className={'search-btn'}>Search</div>
       </div>
       <div className={'daos-container'}>
-      {daoList && filteredDaos.map((dao: Dao) => (
+      {daoList && filteredDaos.map((dao: DaoType) => (
         <div
           key={dao.realmId}
           className={"daos-container__dao"}
