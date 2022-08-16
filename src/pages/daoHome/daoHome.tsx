@@ -66,7 +66,7 @@ function DaoHome() {
         </div>
         <div className="daoHome-container__top-cards animate__animated animate__fadeInDown">
           <h4>Cards</h4>
-          <div className="list-holder">
+          <div className="list-holder cards-container">
             <Swiper
               width={330}
               style={{ width: "330px" }}
