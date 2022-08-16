@@ -1,3 +1,9 @@
+@font-face {font-family: "Atlas Grotesk Web Regular"; src: url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.eot"); src: url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.woff") format("woff"), url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.svg#Atlas Grotesk Web Regular") format("svg"); }
+
+div {
+    font-family: "Atlas Grotesk Web Regular", sans-serif;
+}
+
 @mixin blockBase {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, .3);
