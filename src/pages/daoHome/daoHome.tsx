@@ -108,7 +108,7 @@ function DaoHome() {
                   <div className="list-value tr-val">
                     <span className="date">{dayjs(el.date).format("MMM DD, YYYY")}</span>
                     <span className="hash-val">{el.name ? el.name : el.hash}</span>
-                    <span className="type">{el.type}</span>
+                    <span className="type"><span className={`badge ${el.type}`}>{el.type}</span></span>
                     <span className="sum">${el.amount.toFixed(2)}</span>
                   </div>
                 </div>

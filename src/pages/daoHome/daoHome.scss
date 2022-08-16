@@ -315,7 +315,6 @@
 
                     &.type {
                         width: 10%;
-                        font-style: italic;
                     }
 
                     &.sum {
@@ -325,4 +324,18 @@
             }
         }
     }
+}
+
+.badge {
+    font-size:10px;
+    border-radius:20px;
+    padding:4px 8px 4px 8px;
+}
+
+.badge.fiat {
+    background-color:#257F1E;
+}
+
+.badge.blockchain {
+    background-color:#0E8984;
 }
