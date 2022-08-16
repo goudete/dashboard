@@ -13,7 +13,8 @@ export interface DaoType {
     sortRank?: number | undefined,
     keywords?: string | undefined,
     twitter?: string | undefined,
-    website?: string | undefined
+    website?: string | undefined,
+    description?: string | undefined
 }
 
 export interface BankAccount {

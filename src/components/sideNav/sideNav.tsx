@@ -5,12 +5,13 @@ import mockDaoImage from '../../assets/dao-mock-logo.png'
 import ds from '../../assets/ds.svg';
 import tw from '../../assets/tw.svg';
 import ws from '../../assets/ws.svg';
+import { DaoType } from "../../types/types";
 
 import './sideNav.scss'
 
 
 function SideNav() {
-    const {currentDao} = useContext(DaoContext) as DaoCtx;
+    const { currentDao } = useContext(DaoContext) as DaoCtx;
     const nav = useNavigate();
 
     return <div className="sideNav-container animate__animated animate__fadeInLeft">
@@ -19,7 +20,7 @@ function SideNav() {
                 <img src={currentDao?.ogImage ? currentDao?.ogImage : mockDaoImage} />
             </div>
             {currentDao?.displayName}
-            <div className="rid">{currentDao?.realmId}</div>
+            <div className="rid">{currentDao?.realmId?.substring(0, 4) + '...' + currentDao?.realmId?.substring(40)}</div>
             <div className="dao-meta">
                 <div className="link ds">
                     <img src={ds} /> Discord
@@ -34,7 +35,11 @@ function SideNav() {
             </div>
             <div className="dao-meta text">
                 <p>
-                    DAO information is here about DAO Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    {
+                        currentDao?.description
+                            ? currentDao?.description
+                            : 'DAO information is here about DAO Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
+                    }
                 </p>
             </div>
         </div>
@@ -47,7 +52,7 @@ function SideNav() {
                     Cards
                 </NavLink>
                 <NavLink to={`/dao/${currentDao?.realmId}/#3`} className={'link'}>
-                    Transactions 
+                    Transactions
                 </NavLink>
             </nav>
         </div>
