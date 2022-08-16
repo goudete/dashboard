@@ -14,6 +14,25 @@ function SideNav() {
     const { currentDao } = useContext(DaoContext) as DaoCtx;
     const nav = useNavigate();
 
+    const onDiscordClick = (dao: DaoType | null) => {
+        if (dao?.discord) {
+            window.open(dao?.discord, '_blank', 'noopener,noreferrer');
+        }
+    }
+
+    const onTwitterClick = (dao: DaoType | null) => {
+        if (dao?.twitter) {
+            const url = "https://twitter.com/" + dao.twitter.slice(1);
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+    }
+
+    const onWebsiteClick = (dao: DaoType | null) => {
+        if (dao?.website) {
+            window.open(dao?.website, '_blank', 'noopener,noreferrer');
+        }
+    }
+
     return <div className="sideNav-container animate__animated animate__fadeInLeft">
         <div className="sideNav-container__daoInfo" onClick={() => nav(`/dao/${currentDao?.realmId}`)}>
             <div className="avatar">
@@ -22,13 +41,13 @@ function SideNav() {
             {currentDao?.displayName}
             <div className="rid">{currentDao?.realmId?.substring(0, 4) + '...' + currentDao?.realmId?.substring(40)}</div>
             <div className="dao-meta">
-                <div className="link ds">
+                <div className="link ds" onClick={() => onDiscordClick(currentDao)}>
                     <img src={ds} /> Discord
                 </div>
-                <div className="link tw">
+                <div className="link tw" onClick={() => onTwitterClick(currentDao)}>
                     <img src={tw} /> Twitter
                 </div>
-                <div className="link ws">
+                <div className="link ws" onClick={() => onWebsiteClick(currentDao)}>
                     <img src={ws} />
                     www
                 </div>
