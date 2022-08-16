@@ -244,13 +244,25 @@ export const RequestModal = ({ show, closeModal, modalType }: any) => {
 
         <div className="form-holder">
           <div className="form-field">
-            <div className="label">Proposal name *</div>
+            <div className="label">{modalType === 'transaction' ? 'Account Holder Name' : 'Proposal name *'}</div>
             <input type={"text"} name={"name"} onChange={handleChange} />
           </div>
           <div className="form-field">
-            <div className="label">Owner address *</div>
+            <div className="label">{modalType === 'transaction' ? 'Payment Amount' : 'Owner address *'}</div>
             <input type={"text"} name={"baseSig"} onChange={handleChange} />
           </div>
+          {modalType === 'transaction' && (
+            <>
+              <div className="form-field">
+                <div className="label">Routing Number</div>
+                <input type={"text"} name={"baseSig"} onChange={handleChange} />
+              </div>
+                <div className="form-field">
+                <div className="label">Account Number</div>
+                <input type={"text"} name={"baseSig"} onChange={handleChange} />
+              </div>
+            </>
+          )}
           <div className="form-field row">
             <div
               className="label"
@@ -274,7 +286,7 @@ export const RequestModal = ({ show, closeModal, modalType }: any) => {
               {formData.multiSigData && (
                 <>
                   <span className="label-span">
-                    Theese signatures will be required to approve transactions
+                    These signatures will be required to approve transactions
                   </span>
                   <div className="signatures">
                     {formData.multiSigData.map((el, i) => (
