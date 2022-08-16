@@ -16,12 +16,16 @@ import { MainButton } from "../../components";
 import { Navigation, Pagination } from "swiper";
 import classNames from "classnames";
 
-export type ModalType = 'account' | 'card';
+export type ModalType = "account" | "card";
 
 function DaoHome() {
+  const sortedTransactions = mockTransactions.sort((a, b) =>
+    a.date < b.date ? 1 : -1
+  );
+
   const { currentDao } = useContext(DaoContext) as DaoCtx;
   const [showModal, setShowModal] = useState(false);
-  const [modalType, setModalType] = useState<ModalType>('account');
+  const [modalType, setModalType] = useState<ModalType>("account");
   const [bankAccounts, setBankAccounts] = useState<BankAccount[]>([]);
   const [cards, setCards] = useState<Card[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -36,7 +40,7 @@ function DaoHome() {
   const openModal = (modalType: ModalType) => {
     setModalType(modalType);
     setShowModal(true);
-  }
+  };
 
   return (
     <div className="daoHome-container">
@@ -47,27 +51,38 @@ function DaoHome() {
             {bankAccounts.map((el, i) => (
               <div className="list-item" key={el.accountNumber}>
                 <div className={"part"}>
-                  {i === 0 && <>
-                    <div className="list-label ac-label">
-                      <span className="title">Title</span>
-                      <span className="num">Account #</span>
-                      <span className="bal">Balance</span>
-                   </div>
-                  </>}
-                  
+                  {i === 0 && (
+                    <>
+                      <div className="list-label ac-label">
+                        <span className="title">Name</span>
+                        <span className="num">Account Number</span>
+                        <span className="bal">Balance</span>
+                      </div>
+                    </>
+                  )}
+
                   <div className="list-value ac-val">
                     <span className="title">{el.title}</span>
                     <span className="num">
-                      <span>{el.accountNumber?.substring(0, 4) + '......' + el.accountNumber?.substring(12)}</span>
+                      <span>
+                        {"---- ---- ---- " + el.accountNumber?.substring(18)}
+                      </span>
                     </span>
-                    <span className="bal"><span>{el.currency}</span>{el.amount?.toFixed(2)}</span>
+                    <span className="bal">
+                      <span>{el.currency}</span>
+                      {el.amount?.toFixed(2)}
+                    </span>
                   </div>
                 </div>
               </div>
             ))}
           </div>
           <div className="actions">
-            <MainButton title={"New account"} onClick={() => openModal('account')} small />
+            <MainButton
+              title={"Propose Account"}
+              onClick={() => openModal("account")}
+              small
+            />
           </div>
         </div>
         <div className="daoHome-container__top-cards animate__animated animate__fadeInDown">
@@ -93,7 +108,11 @@ function DaoHome() {
           </div>
 
           <div className="actions">
-            <MainButton title={"Issue card"} onClick={() => openModal('card')} small />
+            <MainButton
+              title={"Propose Card"}
+              onClick={() => openModal("card")}
+              small
+            />
           </div>
         </div>
       </div>
@@ -113,8 +132,20 @@ function DaoHome() {
                     </div>
                   )}
                   <div className="list-value tr-val">
-                    <span className="date">{dayjs(el.date).format("MMM DD, YYYY")}</span>
-                    <span className="hash-val">{el.name ? el.name : <span className="hash">{el.hash?.substring(0, 6) + '...' + el.hash?.substring(52)}</span>}</span>
+                    <span className="date">
+                      {dayjs(el.date).format("MMM DD, YYYY")}
+                    </span>
+                    <span className="hash-val">
+                      {el.name ? (
+                        el.name
+                      ) : (
+                        <span className="hash">
+                          {el.hash?.substring(0, 6) +
+                            "..." +
+                            el.hash?.substring(52)}
+                        </span>
+                      )}
+                    </span>
                     <span className={"type " + el.type}>{el.type}</span>
                     <span className="sum">${el.amount.toFixed(2)}</span>
                   </div>
@@ -131,7 +162,11 @@ function DaoHome() {
           </div>
         </div>
       </div>
-      <RequestModal show={showModal} closeModal={() => setShowModal(false)} modalType={modalType}/>
+      <RequestModal
+        show={showModal}
+        closeModal={() => setShowModal(false)}
+        modalType={modalType}
+      />
     </div>
   );
 }
@@ -141,13 +176,13 @@ export default DaoHome;
 const initialFormData = {
   name: "",
   multiSig: false,
-  baseSig: '',
+  baseSig: "",
   multiSigData: [],
   initialFund: "",
   description: "",
 };
 
-export const RequestModal = ({show, closeModal, modalType}: any) => {
+export const RequestModal = ({ show, closeModal, modalType }: any) => {
   const [formData, setFormData] = useState(initialFormData);
   const [multisigOpt, setMultisigOpt] = useState("");
 
@@ -167,25 +202,33 @@ export const RequestModal = ({show, closeModal, modalType}: any) => {
   };
 
   const handleFormSubmit = () => {
-    alert('Super, your request was sent');
+    alert("Super, your request was sent");
     setFormData(initialFormData);
     closeModal();
-  }
+  };
 
   const handleClose = (e: any) => {
-    const {id} = e.target;
-    if (id === 'close') {
-      closeModal()
+    const { id } = e.target;
+    if (id === "close") {
+      closeModal();
     }
-  }
+  };
 
-  const backdropClasses = classNames(["modal-backdrop", show ? 'animated' : '']);
-  const holderClasses = classNames(['modal-holder animate__animated', show ? 'animate__fadeInUp' : 'animate__fadeOutDown']);
+  const backdropClasses = classNames([
+    "modal-backdrop",
+    show ? "animated" : "",
+  ]);
+  const holderClasses = classNames([
+    "modal-holder animate__animated",
+    show ? "animate__fadeInUp" : "animate__fadeOutDown",
+  ]);
 
   return (
-    <div className={backdropClasses} onClick={handleClose} id={'close'}>
+    <div className={backdropClasses} onClick={handleClose} id={"close"}>
       <div className={holderClasses}>
-        <h4>{modalType === 'account' ? 'Create new account' : 'Issue new card'}</h4>
+        <h4>
+          {modalType === "account" ? "Create new account" : "Issue new card"}
+        </h4>
 
         <div className="form-holder">
           <div className="form-field">
@@ -218,7 +261,9 @@ export const RequestModal = ({show, closeModal, modalType}: any) => {
             <div className="form-field">
               {formData.multiSigData && (
                 <>
-                  <span className="label-span">Theese signatures will be required to approve transactions</span>
+                  <span className="label-span">
+                    Theese signatures will be required to approve transactions
+                  </span>
                   <div className="signatures">
                     {formData.multiSigData.map((el, i) => (
                       <span key={i}>{el}</span>
@@ -232,18 +277,26 @@ export const RequestModal = ({show, closeModal, modalType}: any) => {
                   value={multisigOpt}
                   onChange={(e) => setMultisigOpt(e.target.value)}
                 />
-                <div className="field-btn" onClick={() => addNewSigOption()}>add sig</div>
+                <div className="field-btn" onClick={() => addNewSigOption()}>
+                  add sig
+                </div>
               </div>
             </div>
           )}
-          {modalType === 'account' && <div className="form-field">
-            <div className="label">Initial funds *</div>
-            <input type={"text"} name={"initialFund"} onChange={handleChange} />
-          </div>}
+          {modalType === "account" && (
+            <div className="form-field">
+              <div className="label">Initial funds *</div>
+              <input
+                type={"text"}
+                name={"initialFund"}
+                onChange={handleChange}
+              />
+            </div>
+          )}
           <div className="form-field">
             <div className="label">Description</div>
             {/* <input type={"text"} name={"description"} onChange={handleChange} /> */}
-            <textarea rows={5}/>
+            <textarea rows={5} />
           </div>
 
           <div className="form-field">
