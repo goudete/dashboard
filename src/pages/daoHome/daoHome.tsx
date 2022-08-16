@@ -16,9 +16,12 @@ import { MainButton } from "../../components";
 import { Navigation, Pagination } from "swiper";
 import classNames from "classnames";
 
+export type ModalType = 'account' | 'card';
+
 function DaoHome() {
   const { currentDao } = useContext(DaoContext) as DaoCtx;
   const [showModal, setShowModal] = useState(false);
+  const [modalType, setModalType] = useState<ModalType>('account');
   const [bankAccounts, setBankAccounts] = useState<BankAccount[]>([]);
   const [cards, setCards] = useState<Card[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -30,7 +33,8 @@ function DaoHome() {
     setTransactions(mockTransactions);
   }, []);
 
-  const requestNewAccount = () => {
+  const openModal = (modalType: ModalType) => {
+    setModalType(modalType);
     setShowModal(true);
   }
 
@@ -63,7 +67,7 @@ function DaoHome() {
             ))}
           </div>
           <div className="actions">
-            <MainButton title={"New account"} onClick={() => requestNewAccount()} small />
+            <MainButton title={"New account"} onClick={() => openModal('account')} small />
           </div>
         </div>
         <div className="daoHome-container__top-cards animate__animated animate__fadeInDown">
@@ -89,7 +93,7 @@ function DaoHome() {
           </div>
 
           <div className="actions">
-            <MainButton title={"Issue card"} onClick={() => null} small />
+            <MainButton title={"Issue card"} onClick={() => openModal('card')} small />
           </div>
         </div>
       </div>
@@ -181,7 +185,7 @@ export const RequestModal = ({show, closeModal, modalType}: any) => {
   return (
     <div className={backdropClasses} onClick={handleClose} id={'close'}>
       <div className={holderClasses}>
-        <h4>Create new account</h4>
+        <h4>{modalType === 'account' ? 'Create new account' : 'Issue new card'}</h4>
 
         <div className="form-holder">
           <div className="form-field">
@@ -232,10 +236,10 @@ export const RequestModal = ({show, closeModal, modalType}: any) => {
               </div>
             </div>
           )}
-          <div className="form-field">
+          {modalType === 'account' && <div className="form-field">
             <div className="label">Initial funds *</div>
             <input type={"text"} name={"initialFund"} onChange={handleChange} />
-          </div>
+          </div>}
           <div className="form-field">
             <div className="label">Description</div>
             {/* <input type={"text"} name={"description"} onChange={handleChange} /> */}
