@@ -1,3 +1,4 @@
+@import '../../styles/mixins.scss';
 @mixin blockBase {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, .3);
@@ -26,6 +27,7 @@
     display: flex;
     flex-flow: column;
     width: 100%;
+    margin-bottom: 40px;
 
     .actions {
         position: absolute;
@@ -37,13 +39,25 @@
         display: flex;
         flex-direction: row;
         margin-bottom: 20px;
+        @include iPad{
+            flex-flow: column nowrap;
+        }
 
 
         &-bankAccounts {
             @include blockBase();
             width: 50%;
             margin-right: 20px;
-            position: relative
+            position: relative;
+            @include phone() {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            @include iPad{
+                width: 100%;
+                margin-bottom: 20px;
+            }
         }
 
         &-cards {
@@ -51,6 +65,16 @@
             width: 50%;
             position: relative;
             animation-delay: .2s;
+            @include phone() {
+                width: 100%;
+            }
+            @include iPad{
+                width: 100%;
+            }
+        }
+
+        @include phone() {
+            flex-flow: column nowrap;
         }
     }
 
@@ -246,6 +270,10 @@
 
                     &.bal {
                         width: 16%;
+                        text-align: right;
+                        @include phone{
+                            width: 20%;
+                        }
                     }
                 }
             }
@@ -257,25 +285,33 @@
                     }
 
                     &.hash-val {
-                        width: 62%;
+                        width: 58%;
+                        @include phone{
+                            width: 54%;
+                        }
                     }
 
                     &.type {
-                        width: 10%;
+                        width: 14%;
+                        @include phone{
+                            width: 18%;
+                        }
                     }
 
                     &.sum {
                         width: 10%;
+                        text-align: right;
+                        padding-right: 10px;
                     }
                 }
             }
         }
 
         .list-value {
-            padding-bottom: 2px;
+            padding: 6px 0;
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
 
             &.ac-val {
                 span {
@@ -285,43 +321,72 @@
 
                     &.num {
                         width: 60%;
+                        & > span {
+                            
+                        }
                     }
 
                     &.bal {
-                        width: 16%;
+                        width: 20%;
                         text-align: right;
                     }
                 }
             }
 
             &.tr-val {
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
-
                 span {
                     &.date {
                         width: 18%;
                     }
 
                     &.hash-val {
-                        width: 62%;
-                        max-width: 580px;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        text-align: left;
+                        width: 58%;
+                        .hash{
+                            display: inline-block;
+                            max-width: 360px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            text-align: left;
+                        }
+                        @include phone{
+                            width: 54%;
+                        }
                     }
 
                     &.type {
-                        width: 10%;
-                        font-style: italic;
+                        width: 14%;
+                        padding: 2px 4px;
+                        font-size: 12px;
+                        width: auto;
+                        align-self: flex-start;
+                        justify-self: flex-start;
+                        text-align: left;
+                        border-radius: 4px;
+                        &.blockchain{
+                            background: rgb(125, 208, 16);
+                        }
+                        &.fiat{
+                            background: rgb(123, 22, 255);
+                        }
                     }
 
                     &.sum {
                         width: 10%;
+                        justify-self: flex-end;
+                        margin-left: auto;
+                        text-align: right;
+                        padding-right: 10px;
+                        @include phone{
+                            width: auto;
+                            padding-right: 0;
+                        }
                     }
                 }
+            }
+
+            @include phone{
+                font-size: 12px;
             }
         }
     }

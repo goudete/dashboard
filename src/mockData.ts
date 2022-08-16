@@ -64,7 +64,7 @@ const mockTransactions: Transaction[] = [
     date: 1660605703470,
     amount: 0.04209274,
     hash: "6b1fce6a6ae71a46ad5347ac78451fec64dc29f784036db892217047badda9e5",
-    type: 'blockchain',
+    type: 'chain',
   },
 ];
 

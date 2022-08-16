@@ -54,6 +54,11 @@
     @include iPadAir(){
       max-width: 75%;
     }
+
+    @include phone{
+      margin-top: 45%;
+      max-width: 80%;
+    }
   }
 
 }

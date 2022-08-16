@@ -53,7 +53,9 @@ function DaoHome() {
                   
                   <div className="list-value ac-val">
                     <span className="title">{el.title}</span>
-                    <span className="num">{el.accountNumber}</span>
+                    <span className="num">
+                      <span>{el.accountNumber?.substring(0, 4) + '......' + el.accountNumber?.substring(12)}</span>
+                    </span>
                     <span className="bal"><span>{el.currency}</span>{el.amount?.toFixed(2)}</span>
                   </div>
                 </div>
@@ -68,13 +70,14 @@ function DaoHome() {
           <h4>Cards</h4>
           <div className="list-holder">
             <Swiper
-              width={330}
-              style={{ width: "330px" }}
+              // width={330}
+              // style={{ width: "330px" }}
               pagination
               navigation
               modules={[Navigation, Pagination]}
               centeredSlides
-              slidesPerView={1}
+              spaceBetween={10}
+              slidesPerView={1.5}
             >
               <SwiperSlide>
                 <img src={card1} />
@@ -107,8 +110,8 @@ function DaoHome() {
                   )}
                   <div className="list-value tr-val">
                     <span className="date">{dayjs(el.date).format("MMM DD, YYYY")}</span>
-                    <span className="hash-val">{el.name ? el.name : el.hash}</span>
-                    <span className="type">{el.type}</span>
+                    <span className="hash-val">{el.name ? el.name : <span className="hash">{el.hash?.substring(0, 6) + '...' + el.hash?.substring(52)}</span>}</span>
+                    <span className={"type " + el.type}>{el.type}</span>
                     <span className="sum">${el.amount.toFixed(2)}</span>
                   </div>
                 </div>

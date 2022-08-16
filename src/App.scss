@@ -1,3 +1,4 @@
+@import './styles/mixins.scss';
 .container {
     background-color: #1e1e1e;
     display: flex;
@@ -87,10 +88,18 @@
                     border-bottom: 2px solid #fff;
                 }
             }
+
+            @include phone{
+                display: none;
+            }
         }
 
         &-connectWalletButton {
             margin-left: auto;
+            @include phone{
+                transform: scale(.8);
+                justify-self: flex-end;
+            }
         }
     }
 

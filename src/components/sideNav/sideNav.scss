@@ -1,4 +1,6 @@
 
+@import '../../styles/mixins.scss';
+
 .sideNav-container {
     display: flex;
     flex-direction: column;
@@ -6,6 +8,7 @@
     border-radius: 12px;
     width: 20%;
     min-height: 30em;
+    margin-right: 20px;
 
     &__daoInfo {
         padding: 12px 20px;
@@ -36,6 +39,32 @@
             padding: 2px 6px;
             border-radius: 20px;
             margin: 10px 0;
+        }
+        .dao-meta{
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+            margin: 10px auto;
+            &.text{
+                text-align: left;
+                width: 100%;
+                font-size: 12px;
+            }
+            .link{
+                height: 18px;
+                font-size: 8px;
+                font-weight: 300;
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                justify-content: center;
+                align-content: center;
+                justify-items: center;
+                img{
+                    height: 100%;
+                    margin-bottom: 2px;
+                }
+            }
         }
     }
 
@@ -69,16 +98,67 @@
                         width: 4px;
                     }
                 }
-                &.active{
-                    &::before{
-                        width: 4px;
-                    }    
-                }
             }
         }
 
         &-navItem {
             
         }
+
+        @include phone() {
+            display: none;
+        }
+        @include iPad{
+            display: none;
+        }
+        @include iPadPortrait() {
+            display: none;
+        }
+        @include laptop() {
+            display: block;
+        }
+        @include laptop-s() {
+            display: block;
+        }
+        @include desktop-m() {
+            display: block;
+        }
+        @include desktop-l() {
+            display: block;
+        }
     }
+
+    @include phone() {
+        width: 100%;
+        margin: 0 0 10px 0;
+        min-height: unset;
+    }
+
+    @include iPad{
+        width: 100%;
+        margin: 0 0 20px 0;
+        min-height: unset;
+    }
+
+    @include iPadPortrait() {
+        width: 100%;
+        margin: 0 0 20px 0;
+        min-height: unset;
+    }
+
+    @include laptop() {
+        display: block;
+    }
+    @include laptop-s() {
+        display: block;
+    }
+    @include desktop-m() {
+        display: block;
+    }
+    @include desktop-l() {
+        width: 20%;
+        min-height: 30em;
+        margin-right: 20px;
+    }
+
 }

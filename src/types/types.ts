@@ -38,5 +38,5 @@ export interface Transaction {
     amount: number,
     name?: string,
     hash?: string,
-    type: 'blockchain' | 'fiat'
+    type: 'chain' | 'fiat'
 }
