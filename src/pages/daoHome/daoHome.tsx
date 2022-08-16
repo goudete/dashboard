@@ -48,7 +48,7 @@ function DaoHome() {
     <div className="daoHome-container">
       <div className="daoHome-container__top">
         <div className="daoHome-container__top-bankAccounts animate__animated animate__fadeInDown">
-          <h4>Accounts</h4>
+          <h4>Bank Accounts</h4>
           <div className="list-holder">
             {bankAccounts.map((el, i) => (
               <div className="list-item" key={el.accountNumber}>
