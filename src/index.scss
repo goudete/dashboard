@@ -1,4 +1,8 @@
 @import 'animate.css';
+@font-face {font-family: "Atlas Grotesk Web Regular"; src: url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.eot"); src: url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.woff") format("woff"), url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.svg#Atlas Grotesk Web Regular") format("svg"); }
+div {
+    font-family: "Atlas Grotesk Web Regular", sans-serif;
+}
 
 :root {
   --animate-duration: .9s;
@@ -16,11 +20,12 @@ body {
   height: 100vh;
   font-weight: 400;
   // overflow-y: auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
+  font-family: "Atlas Grotesk Web Regular", 'Roboto', sans-serif;
+  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  //   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  //   sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 code {

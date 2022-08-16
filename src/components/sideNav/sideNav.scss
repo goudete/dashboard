@@ -104,19 +104,18 @@
         @include desktop-l() {
             display: block;
         }
-        
         @include phone() {
             display: none;
         }
         @include iPad{
             display: none;
         }
-        @include iPadPortrait() {
-            display: none;
-        }
-        @include iPadAir() {
-            display: none;
-        }
+        // @include iPadPortrait() {
+        //     display: none;
+        // }
+        // @include iPadAir() {
+        //     display: none;
+        // }
         // @include laptop() {
         //     display: block;
         // }
