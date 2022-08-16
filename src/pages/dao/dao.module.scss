@@ -1,7 +1,12 @@
+@import '../../mixins.scss';
+
 .container{
   display: flex;
   gap: 2em;
   width: calc(80% - 250px);
   margin: auto;
   padding-top: 4%;
-}
+  @include iPadAir(){
+    width: 96%;
+  }
+ }

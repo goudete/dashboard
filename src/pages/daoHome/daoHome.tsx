@@ -57,17 +57,6 @@ function DaoHome() {
                     <span className="bal"><span>{el.currency}</span>{el.amount?.toFixed(2)}</span>
                   </div>
                 </div>
-                {/* <div className={"part"}>
-                  {i === 0 && <div className="list-label">Account #</div>}
-                  <div className="list-value">{el.accountNumber}</div>
-                </div>
-                <div className={"part"}>
-                  {i === 0 && <div className="list-label">Balance</div>}
-                  <div className="list-value">
-                    <span>{el.currency} </span>
-                    {el.amount?.toFixed(2)}
-                  </div>
-                </div> */}
               </div>
             ))}
           </div>
@@ -75,7 +64,6 @@ function DaoHome() {
             <MainButton title={"New account"} onClick={() => requestNewAccount()} small />
           </div>
         </div>
-
         <div className="daoHome-container__top-cards animate__animated animate__fadeInDown">
           <h4>Cards</h4>
           <div className="list-holder">
@@ -136,7 +124,6 @@ function DaoHome() {
           </div>
         </div>
       </div>
-
       <RequestModal show={showModal} closeModal={() => setShowModal(false)}/>
     </div>
   );
@@ -147,12 +134,13 @@ export default DaoHome;
 const initialFormData = {
   name: "",
   multiSig: false,
+  baseSig: '',
   multiSigData: [],
   initialFund: "",
   description: "",
 };
 
-export const RequestModal = ({show, closeModal}: any) => {
+export const RequestModal = ({show, closeModal, modalType}: any) => {
   const [formData, setFormData] = useState(initialFormData);
   const [multisigOpt, setMultisigOpt] = useState("");
 
@@ -177,18 +165,29 @@ export const RequestModal = ({show, closeModal}: any) => {
     closeModal();
   }
 
+  const handleClose = (e: any) => {
+    const {id} = e.target;
+    if (id === 'close') {
+      closeModal()
+    }
+  }
+
   const backdropClasses = classNames(["modal-backdrop", show ? 'animated' : '']);
   const holderClasses = classNames(['modal-holder animate__animated', show ? 'animate__fadeInUp' : 'animate__fadeOutDown']);
 
   return (
-    <div className={backdropClasses} onClick={() => closeModal}>
+    <div className={backdropClasses} onClick={handleClose} id={'close'}>
       <div className={holderClasses}>
         <h4>Create new account</h4>
 
         <div className="form-holder">
           <div className="form-field">
-            <div className="label">Enter org name</div>
+            <div className="label">Enter org name *</div>
             <input type={"text"} name={"name"} onChange={handleChange} />
+          </div>
+          <div className="form-field">
+            <div className="label">Base signature *</div>
+            <input type={"text"} name={"baseSig"} onChange={handleChange} />
           </div>
           <div className="form-field row">
             <div
@@ -231,12 +230,13 @@ export const RequestModal = ({show, closeModal}: any) => {
             </div>
           )}
           <div className="form-field">
-            <div className="label">Initial funds</div>
+            <div className="label">Initial funds *</div>
             <input type={"text"} name={"initialFund"} onChange={handleChange} />
           </div>
           <div className="form-field">
             <div className="label">Description</div>
-            <input type={"text"} name={"description"} onChange={handleChange} />
+            {/* <input type={"text"} name={"description"} onChange={handleChange} /> */}
+            <textarea rows={5}/>
           </div>
 
           <div className="form-field">
