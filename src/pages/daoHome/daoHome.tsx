@@ -131,7 +131,7 @@ function DaoHome() {
           </div>
         </div>
       </div>
-      <RequestModal show={showModal} closeModal={() => setShowModal(false)}/>
+      <RequestModal show={showModal} closeModal={() => setShowModal(false)} modalType={modalType}/>
     </div>
   );
 }
