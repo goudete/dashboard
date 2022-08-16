@@ -247,11 +247,11 @@ div {
                     }
 
                     &.num {
-                        width: 60%;
+                        width: 50%;
                     }
 
                     &.bal {
-                        width: 16%;
+                        width: 26%;
                     }
                 }
             }
@@ -290,12 +290,13 @@ div {
                     }
 
                     &.num {
-                        width: 60%;
+                        width: 50%;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
 
                     &.bal {
-                        width: 16%;
-                        text-align: right;
+                        width: 26%;
                     }
                 }
             }
@@ -312,7 +313,6 @@ div {
 
                     &.hash-val {
                         width: 62%;
-                        max-width: 580px;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
