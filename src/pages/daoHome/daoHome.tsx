@@ -66,7 +66,7 @@ function DaoHome() {
         </div>
         <div className="daoHome-container__top-cards animate__animated animate__fadeInDown">
           <h4>Cards</h4>
-          <div className="list-holder">
+          <div className="list-holder cards-container">
             <Swiper
               width={330}
               style={{ width: "330px" }}
@@ -108,7 +108,7 @@ function DaoHome() {
                   <div className="list-value tr-val">
                     <span className="date">{dayjs(el.date).format("MMM DD, YYYY")}</span>
                     <span className="hash-val">{el.name ? el.name : el.hash}</span>
-                    <span className="type">{el.type}</span>
+                    <span className="type"><span className={`badge ${el.type}`}>{el.type}</span></span>
                     <span className="sum">${el.amount.toFixed(2)}</span>
                   </div>
                 </div>

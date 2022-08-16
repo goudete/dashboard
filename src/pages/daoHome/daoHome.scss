@@ -1,3 +1,9 @@
+@font-face {font-family: "Atlas Grotesk Web Regular"; src: url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.eot"); src: url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.woff") format("woff"), url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0a5fbb91dc4a457f5945dca11d44517d.svg#Atlas Grotesk Web Regular") format("svg"); }
+
+div {
+    font-family: "Atlas Grotesk Web Regular", sans-serif;
+}
+
 @mixin blockBase {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, .3);
@@ -241,11 +247,11 @@
                     }
 
                     &.num {
-                        width: 60%;
+                        width: 50%;
                     }
 
                     &.bal {
-                        width: 16%;
+                        width: 26%;
                     }
                 }
             }
@@ -284,12 +290,13 @@
                     }
 
                     &.num {
-                        width: 60%;
+                        width: 50%;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
 
                     &.bal {
-                        width: 16%;
-                        text-align: right;
+                        width: 26%;
                     }
                 }
             }
@@ -306,7 +313,6 @@
 
                     &.hash-val {
                         width: 62%;
-                        max-width: 580px;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
@@ -315,7 +321,6 @@
 
                     &.type {
                         width: 10%;
-                        font-style: italic;
                     }
 
                     &.sum {
@@ -325,4 +330,22 @@
             }
         }
     }
+}
+
+.badge {
+    font-size:10px;
+    border-radius:20px;
+    padding:4px 8px 4px 8px;
+}
+
+.badge.fiat {
+    background-color:#257F1E;
+}
+
+.badge.blockchain {
+    background-color:#0E8984;
+}
+
+.cards-container {
+    padding-top: 15px
 }

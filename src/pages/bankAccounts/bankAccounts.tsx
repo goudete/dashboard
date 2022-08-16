@@ -11,7 +11,7 @@ function BankAccounts() {
         {
             mockBankAccounts.map((account: BankAccount, i: number) => (
                 <div key={i} className='bankAccounts-container__bankAccount'>
-                    bank account: {account.DaoId}
+                    <pre>bank account: {account.DaoId}</pre>
                 </div>
             ))
         }
