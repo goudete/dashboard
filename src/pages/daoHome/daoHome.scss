@@ -91,6 +91,10 @@
     @include phone{
         width: 100%;
     }
+
+    @include iPad {
+        width: 100%;       
+    }
 }
 
 .modal-backdrop {
@@ -129,6 +133,10 @@
 
         h4 {
             margin-bottom: 12px;
+        }
+        @include phone{
+            min-width: unset;
+            width: 90%;
         }
     }
 
