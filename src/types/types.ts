@@ -14,7 +14,8 @@ export interface DaoType {
     keywords?: string | undefined,
     twitter?: string | undefined,
     website?: string | undefined,
-    description?: string | undefined
+    description?: string | undefined,
+    discord?: string | undefined,
 }
 
 export interface BankAccount {
