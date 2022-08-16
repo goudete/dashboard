@@ -52,19 +52,19 @@ const mockTransactions: Transaction[] = [
     date: 1659850380000,
     amount: 9.99,
     name: "Adobe Photography Plan",
-    type: "fiat",
+    type: "card",
   },
   {
     date: 1659763980000,
     amount: 25,
     name: "Domestic Wire Fee",
-    type: "fiat",
+    type: 'ach/wire',
   },
   {
     date: 1660605703470,
-    amount: 0.04209274,
+    amount: 0.39260969976905313,
     hash: "6b1fce6a6ae71a46ad5347ac78451fec64dc29f784036db892217047badda9e5",
-    type: "chain",
+    type: "on chain",
   },
 ];
 

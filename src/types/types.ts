@@ -39,5 +39,5 @@ export interface Transaction {
     amount: number,
     name?: string,
     hash?: string,
-    type: 'chain' | 'fiat'
+    type: 'on chain' | 'card' | 'ach/wire'
 }

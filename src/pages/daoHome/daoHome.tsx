@@ -5,6 +5,8 @@ import { mockBankAccounts, mockCards, mockTransactions } from "../../mockData";
 import { BankAccount, Card, Transaction } from "../../types/types";
 import card1 from "../../assets/card-1.svg";
 import card2 from "../../assets/card-2.svg";
+import solIcon from '../../assets/solana.svg';
+import trIcon from '../../assets/tr.svg';
 import dayjs from "dayjs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -16,7 +18,7 @@ import { MainButton } from "../../components";
 import { Navigation, Pagination } from "swiper";
 import classNames from "classnames";
 
-export type ModalType = "account" | "card";
+export type ModalType = "account" | "card" | 'transaction';
 
 function DaoHome() {
   const sortedTransactions = mockTransactions.sort((a, b) =>
@@ -57,6 +59,7 @@ function DaoHome() {
                         <span className="title">Name</span>
                         <span className="num">Account Number</span>
                         <span className="bal">Balance</span>
+                        <span className="edit">New</span>
                       </div>
                     </>
                   )}
@@ -71,6 +74,9 @@ function DaoHome() {
                     <span className="bal">
                       <span>{el.currency}</span>
                       {el.amount?.toFixed(2)}
+                    </span>
+                    <span className="edit" onClick={() => openModal('transaction')}>
+                      <img src={trIcon} title={'Propose new transaction'}/>
                     </span>
                   </div>
                 </div>
@@ -147,7 +153,13 @@ function DaoHome() {
                       )}
                     </span>
                     <span className={"type " + el.type}>{el.type}</span>
-                    <span className="sum">${el.amount.toFixed(2)}</span>
+                    <span className="sum">
+                      {
+                        el.type !== 'on chain' ? 
+                          '$' + el.amount.toFixed(2) :
+                          <span title={el.amount.toString()}><img src={solIcon} className={'solIcon'}/> {el.amount.toString().substring(0, 6) + '...'}</span>
+                      }
+                    </span>
                   </div>
                 </div>
               </div>
@@ -227,16 +239,16 @@ export const RequestModal = ({ show, closeModal, modalType }: any) => {
     <div className={backdropClasses} onClick={handleClose} id={"close"}>
       <div className={holderClasses}>
         <h4>
-          {modalType === "account" ? "Create new account" : "Issue new card"}
+          {modalType === "account" ? "Propose new bank account" : modalType === 'transaction' ? 'Propose new transaction' : "Issue new card"}
         </h4>
 
         <div className="form-holder">
           <div className="form-field">
-            <div className="label">Enter org name *</div>
+            <div className="label">Proposal name *</div>
             <input type={"text"} name={"name"} onChange={handleChange} />
           </div>
           <div className="form-field">
-            <div className="label">Base signature *</div>
+            <div className="label">Owner address *</div>
             <input type={"text"} name={"baseSig"} onChange={handleChange} />
           </div>
           <div className="form-field row">
@@ -248,7 +260,7 @@ export const RequestModal = ({ show, closeModal, modalType }: any) => {
                 })
               }
             >
-              Multisignature required
+              Multisig
             </div>
             <input
               type={"checkbox"}
@@ -285,7 +297,7 @@ export const RequestModal = ({ show, closeModal, modalType }: any) => {
           )}
           {modalType === "account" && (
             <div className="form-field">
-              <div className="label">Initial funds *</div>
+              <div className="label">Initial funding *</div>
               <input
                 type={"text"}
                 name={"initialFund"}
@@ -303,7 +315,7 @@ export const RequestModal = ({ show, closeModal, modalType }: any) => {
             <MainButton
               className="centered-btn"
               small
-              title={"Send request"}
+              title={"submit proposal"}
               onClick={handleFormSubmit}
               inverse
             />
