@@ -65,16 +65,10 @@
   }
 }
 
-@mixin tablet($size) {
-  @if($size) {
-    @media #{$size} {
-      @content;
-    }
-  } @else {
-    @media #{$tablet-land} {
-      @content;
-    }
-  }
+@mixin tablet() {
+  @media #{$tablet-land} {
+    @content;
+  } 
 }
 
 @mixin iPad() {

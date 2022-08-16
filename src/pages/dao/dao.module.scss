@@ -1,34 +1,30 @@
 @import '../../mixins.scss';
 
-.container{
+.container {
   display: flex;
   width: calc(80%);
   margin: auto;
   padding-top: 4%;
-  @include iPadAir(){
+
+  @include desktop-l() {
+    flex-flow: row;
+  }
+
+  @include iPadAir() {
     width: 96%;
   }
+  
   @include phone() {
     flex-flow: column;
   }
+
   @include iPad() {
     flex-flow: column;
     min-height: auto;
   }
+
   @include iPadPortrait() {
     flex-flow: column;
   }
-  @include laptop() {
-    flex-flow: row;
-  }
-  @include laptop-s() {
-    flex-flow: row;
-  }
-  @include desktop-m() {
-    flex-flow: row;
-  }
-  @include desktop-l() {
-    flex-flow: row;
-  }
-  
- }
+
+}

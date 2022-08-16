@@ -12,10 +12,10 @@ $tablet: "(max-width: 990px)";
 $phone-query: "(max-width: 739px)";
 $phone-s-query: "(max-width: 640px)";
 
-$iPad-query: "(min-device-width : 768px) and (max-device-width : 1024px)";
+$iPad-query: "(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2)";
 $iPad-air-query: "(min-width: 820px) and (max-width: 1180px)";
 $iPad-air-port-query: "(min-width: 820px) and (orientation: portrait)";
-$iPadPortrait-query: "(min-device-width : 768px)";
+$iPadPortrait-query: "(min-device-width: 768px) and (max-device-width : 1024px) and (orientation: portrait)";
 $iPadLand-query: "(min-device-width : 1024px)";
 
 $iPhone13-query: "(min-device-width: 390px) and (max-device-height: 844px) and (-webkit-device-pixel-ratio: 3)"

@@ -105,6 +105,10 @@
             
         }
 
+        @include desktop-l() {
+            display: block;
+        }
+        
         @include phone() {
             display: none;
         }
@@ -114,18 +118,24 @@
         @include iPadPortrait() {
             display: none;
         }
-        @include laptop() {
-            display: block;
+        @include iPadAir() {
+            display: none;
         }
-        @include laptop-s() {
-            display: block;
-        }
-        @include desktop-m() {
-            display: block;
-        }
-        @include desktop-l() {
-            display: block;
-        }
+        // @include laptop() {
+        //     display: block;
+        // }
+        // @include laptop-s() {
+        //     display: block;
+        // }
+        // @include desktop-m() {
+        //     display: block;
+        // }
+    }
+
+    @include desktop-l() {
+        width: 20%;
+        min-height: 30em;
+        margin-right: 20px;
     }
 
     @include phone() {
@@ -140,25 +150,10 @@
         min-height: unset;
     }
 
-    @include iPadPortrait() {
-        width: 100%;
-        margin: 0 0 20px 0;
-        min-height: unset;
-    }
-
-    @include laptop() {
-        display: block;
-    }
-    @include laptop-s() {
-        display: block;
-    }
-    @include desktop-m() {
-        display: block;
-    }
-    @include desktop-l() {
-        width: 20%;
-        min-height: 30em;
-        margin-right: 20px;
-    }
+    // @include iPadPortrait() {
+    //     width: 100%;
+    //     margin: 0 0 20px 0;
+    //     min-height: unset;
+    // }
 
 }
