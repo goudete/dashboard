@@ -19,10 +19,10 @@ function Daos() {
   }, [])
 
   const filterDaos = (e: any) => {
-    const {value} = e.target;
-    
+    const { value } = e.target;
+
     if (!value) {
-      return setFilteredDaos(daoList)  
+      return setFilteredDaos(daoList)
     }
 
     const filtered = daoList.filter((el: any) => {
@@ -31,31 +31,46 @@ function Daos() {
     setFilteredDaos(filtered)
   }
 
+  const getImage = (dao: DaoType) => {
+
+    if (!dao.ogImage || dao.ogImage.slice(0,5) !== 'https') {
+      return <img src={mockDaoImage} />;
+    }
+
+    if (dao.ogImage.slice(-4) === 'avif') {
+      return <picture>
+        <source srcSet={dao.ogImage} />
+      </picture>
+    }
+
+    return <img src={dao.ogImage} />;
+  };
+
   return (
     <div className="daos-holder">
       <div className="search-holder">
         <div className="search-container">
-          <input onChange={filterDaos} type={'text'}/>
+          <input onChange={filterDaos} type={'text'} />
         </div>
         <div className={'search-btn'}>Search</div>
       </div>
       <div className={'daos-container'}>
-      {daoList && filteredDaos.map((dao: DaoType, i: number) => (
-        <div
-          key={dao.realmId}
-          className={"daos-container__dao animate__animated animate__fadeInUp"}
-          style={{animationDelay: .04 * i +'s'}}
-          onClick={() => nav(`/dao/${dao.realmId}`)}
-        >
-          <div className="avatar-holder">
-            <img src={dao.ogImage ? dao.ogImage : mockDaoImage} />
+        {daoList && filteredDaos.map((dao: DaoType, i: number) => (
+          <div
+            key={dao.realmId}
+            className={"daos-container__dao animate__animated animate__fadeInUp"}
+            style={{ animationDelay: .04 * i + 's' }}
+            onClick={() => nav(`/dao/${dao.realmId}`)}
+          >
+            <div className="avatar-holder">
+              {getImage(dao)}
+            </div>
+            <div>
+              <p>{dao.displayName}</p>
+            </div>
+            {/* <MainButton title={'join'} onClick={() => null} small/> */}
           </div>
-          <div>
-            <p>{dao.displayName}</p>
-          </div>
-          {/* <MainButton title={'join'} onClick={() => null} small/> */}
-        </div>
-      ))}
+        ))}
       </div>
     </div>
   );
