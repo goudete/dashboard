@@ -35,7 +35,7 @@ const mockBankAccounts: BankAccount[] = [
     DaoId: "2",
     accountNumber: "A0U8K2O6L3N5G3B4B7B4U8",
     currency: "$",
-    amount: 2132,
+    amount: 30132,
     title: "Leasing",
   },
   {
@@ -43,27 +43,39 @@ const mockBankAccounts: BankAccount[] = [
     accountNumber: "O6U8K3K2A5B4P7O6O7U9G3",
     currency: "$",
     amount: 7300,
-    title: "Savings",
+    title: "Operations",
   },
 ];
 
 const mockTransactions: Transaction[] = [
   {
     date: 1659850380000,
-    amount: 9.99,
-    name: "Adobe Photography Plan",
-    type: "card",
+    amount: 3450,
+    name: "Deborah Miller Catering & Events",
+    type: "ach/wire",
+  },
+  {
+    date: 1659850380000,
+    amount: 96.69,
+    hash: "UNHyunyaaKNNDhKs3yuxASr4G1U997ZUbssQyv9FrLB7dXdu7L111omUnyB",
+    type: "on chain",
   },
   {
     date: 1659763980000,
-    amount: 25,
-    name: "Domestic Wire Fee",
+    amount: 400,
+    name: "Sherwin-Williams Paint Store",
     type: 'ach/wire',
+  },
+  {
+    date: 1659763980000,
+    amount: 300,
+    name: "SAMSUNG 32 inch UJ59 4k monitor",
+    type: 'card',
   },
   {
     date: 1660605703470,
     amount: 0.39260969976905313,
-    hash: "6b1fce6a6ae71a46ad5347ac78451fec64dc29f784036db892217047badda9e5",
+    hash: "inuybvyaaKNNDhKs3yuxASr4G1U997ZUbssQyv9FrLB7dXdu7L111onXSSs",
     type: "on chain",
   },
 ];
