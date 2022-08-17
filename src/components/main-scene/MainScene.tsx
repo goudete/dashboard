@@ -5,11 +5,13 @@ import { Leva, useControls } from "leva";
 import { ParticlesBG } from "./ParticlesBG";
 import { MainGroup } from "./MainGroup";
 import { MainButton } from "../MainButton/MainButton";
+import { EmailForm } from "../EmaiForm/EmailForm";
 import { Navigate, useNavigate } from "react-router-dom";
+
 
 type MainSceneProps = {};
 
-export const MainScene = ({}: MainSceneProps) => {
+export const MainScene = ({ }: MainSceneProps) => {
   const [isAuth, setIsAuth] = useState(false);
   const pointRef = useRef();
   let navigate = useNavigate();
@@ -39,9 +41,7 @@ export const MainScene = ({}: MainSceneProps) => {
               Spend treasury funds directly via virtual cards and virtual bank
               accounts–powered by Stripe.
             </p>
-            <MainButton
-              title={"Explore"}
-              onClick={() => navigate("/daos")}
+            <EmailForm
               className={"animate__animated animate__fadeInUp"}
             />
           </div>
