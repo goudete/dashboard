@@ -26,8 +26,8 @@ function App() {
         <div className="header-divider" />
         <nav>
           <Link to={"daos"}>DAOs</Link>
-          <Link to={"about"}>About</Link>
-          <Link to={"services"}>Services</Link>
+          {/* <Link to={"about"}>About</Link>
+          <Link to={"services"}>Services</Link> */}
         </nav>
         <div className="container__header-connectWalletButton">
           <WalletAuth />
