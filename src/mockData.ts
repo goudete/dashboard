@@ -56,7 +56,7 @@ const mockTransactions: Transaction[] = [
   },
   {
     date: 1659850380000,
-    amount: 96.69,
+    amount: 3.0260969976905313,
     hash: "UNHyunyaaKNNDhKs3yuxASr4G1U997ZUbssQyv9FrLB7dXdu7L111omUnyB",
     type: "on chain",
   },
