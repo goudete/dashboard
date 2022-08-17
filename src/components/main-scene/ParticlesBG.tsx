@@ -30,7 +30,7 @@ export const ParticlesBG = () => {
   const particlesMaterial = new PointsMaterial({
     // color: "white",
     // colorWrite: true,
-    size: 0.09,
+    size: 0.5,
     sizeAttenuation: true,
     transparent: true,
   });
