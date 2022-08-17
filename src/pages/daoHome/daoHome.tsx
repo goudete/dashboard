@@ -214,7 +214,6 @@ export const RequestModal = ({ show, closeModal, modalType }: any) => {
   };
 
   const handleFormSubmit = () => {
-    alert("Super, your request was sent");
     setFormData(initialFormData);
     closeModal();
   };
