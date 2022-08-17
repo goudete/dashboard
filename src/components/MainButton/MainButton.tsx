@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 type MainButtonProps = {
   title: string,
-  onClick: () => void,
+  onClick: (e: any | null) => void,
   disabled?: boolean,
   className?: string,
   small?: boolean,
