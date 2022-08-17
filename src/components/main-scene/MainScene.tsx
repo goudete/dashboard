@@ -5,7 +5,7 @@ import { Leva, useControls } from "leva";
 import { ParticlesBG } from "./ParticlesBG";
 import { MainGroup } from "./MainGroup";
 import { MainButton } from "../MainButton/MainButton";
-import { FormButton } from "../FormButton/FormButton";
+import { EmailForm } from "../EmaiForm/EmailForm";
 import { Navigate, useNavigate } from "react-router-dom";
 
 
@@ -41,7 +41,7 @@ export const MainScene = ({ }: MainSceneProps) => {
               Spend treasury funds directly via virtual cards and virtual bank
               accounts–powered by Stripe.
             </p>
-            <FormButton 
+            <EmailForm
               className={"animate__animated animate__fadeInUp"}
             />
           </div>

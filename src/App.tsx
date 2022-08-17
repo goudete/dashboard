@@ -25,7 +25,7 @@ function App() {
         </div>
         <div className="header-divider" />
         <nav>
-          <Link to={"daos"}>DAOs</Link>
+          {/* <Link to={"daos"}>DAOs</Link> */}
           {/* <Link to={"about"}>About</Link>
           <Link to={"services"}>Services</Link> */}
         </nav>

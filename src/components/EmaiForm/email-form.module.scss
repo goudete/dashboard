@@ -1,0 +1,19 @@
+@import '../../styles/mixins.scss';
+
+
+.formHolder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .inputArea {
+        border-radius: 20px;
+        width: 50%;
+
+        @include phone() {
+            width: 85%;
+            height: 50px;
+            margin: 5px;
+        }
+    }
+}
