@@ -3,12 +3,17 @@
 
 .formHolder {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    animation-delay: .8s;
 
-    .inputArea {
+    input {
+        padding: 0 15px;
         border-radius: 20px;
         width: 50%;
+        -webkit-appearance: none;
+        border: 0;
+        margin: 0 10px 0 0;
+        font-size: 22px;
 
         @include phone() {
             width: 85%;

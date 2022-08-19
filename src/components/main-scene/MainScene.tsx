@@ -41,9 +41,7 @@ export const MainScene = ({ }: MainSceneProps) => {
               Spend treasury funds directly via virtual cards and virtual bank
               accounts–powered by Stripe.
             </p>
-            <EmailForm
-              className={"animate__animated animate__fadeInUp"}
-            />
+            <EmailForm />
           </div>
         </div>
 

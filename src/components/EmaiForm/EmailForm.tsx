@@ -33,7 +33,7 @@ export function EmailForm({ className, small, inverse }: FormButtonProps) {
       if ("emailjs" in window) {
         // @ts-ignore
         const { emailjs } = window;
-        const res = await emailjs.send(SERVICE, TEMPLATE, templateParams);
+        await emailjs.send(SERVICE, TEMPLATE, templateParams);
         return alert('Successfully joined waitlist');
       }
 
@@ -42,14 +42,14 @@ export function EmailForm({ className, small, inverse }: FormButtonProps) {
     }
   }
 
-  return <div className={formStyles.formHolder}>
+  return <div className={formStyles.formHolder + ' animate__animated animate__fadeInUp'}>
     <input 
       placeholder="satoshi@xpipe.com"
-      type={"text"}
+      type={"email"}
       name={"email"}
-      className={formStyles.inputArea}
       onChange={handleChange}
     />
+
     <div onClick={sendEmail} className={btnClasses}>submit</div>
   </div>;
 };
