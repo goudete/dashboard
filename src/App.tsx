@@ -20,18 +20,18 @@ function App() {
   return (
     <div className="container">
       <div className="container__header">
-        <div className="logo-holder" onClick={() => nav("/")}>
+        {/* <div className="logo-holder" onClick={() => nav("/")}>
           <img src={mainLogo} />
-        </div>
+        </div> */}
         <div className="header-divider" />
         <nav>
           {/* <Link to={"daos"}>DAOs</Link> */}
           {/* <Link to={"about"}>About</Link>
           <Link to={"services"}>Services</Link> */}
         </nav>
-        <div className="container__header-connectWalletButton">
+        {/* <div className="container__header-connectWalletButton">
           <WalletAuth />
-        </div>
+        </div> */}
       </div>
       <div className="container__body">
         {!mainPage && <Outlet />}

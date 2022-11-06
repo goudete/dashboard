@@ -44,7 +44,7 @@ export function EmailForm({ className, small, inverse }: FormButtonProps) {
 
   return <div className={formStyles.formHolder + ' animate__animated animate__fadeInUp'}>
     <input 
-      placeholder="satoshi@xpipe.com"
+      placeholder="enrique@pip.xyz"
       type={"email"}
       name={"email"}
       onChange={handleChange}

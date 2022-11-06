@@ -35,11 +35,10 @@ export const MainScene = ({ }: MainSceneProps) => {
         <div className={styles.uiHolder}>
           <div className={styles.textSection}>
             <h1 className={"animate__animated animate__fadeInDown"}>
-              Offramping made easy for DAOs
+              Pip
             </h1>
             <p className={"animate__animated animate__fadeInUp"}>
-              Spend treasury funds directly via virtual cards and virtual bank
-              accounts–powered by Stripe.
+              instant, ultra cheap, recurring, and notifying remittances that bring Mexican Americans peace of mind
             </p>
             <EmailForm />
           </div>
