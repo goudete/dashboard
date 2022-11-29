@@ -35,11 +35,11 @@ export const MainScene = ({ }: MainSceneProps) => {
         <div className={styles.uiHolder}>
           <div className={styles.textSection}>
             <h1 className={"animate__animated animate__fadeInDown"}>
-              Easily send and receive money
+              Easily send and receive money between countries
             </h1>
             <p className={"animate__animated animate__fadeInUp"}>
               We help international students in New York send and receive money between their 
-              family and friends back home.
+              family and friends back home
             </p>
             <EmailForm />
           </div>
