@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import formStyles from './email-form.module.scss'
 import btnStyles from '../MainButton/main-button.module.scss';
 import classnames from 'classnames';
@@ -15,7 +15,7 @@ const TEMPLATE = 'template_t57wz1s';
 export function EmailForm({ className, small, inverse }: FormButtonProps) {
   const [email, setEmail] = useState<string | null>(null);
   const btnClasses = classnames([btnStyles.btnHolder, className ? className : '', small ? btnStyles.smallBtn : '', inverse ? btnStyles.inverseColors : ''])
-  
+
   const handleChange = (e: any) => {
     const email = e.target.value;
     setEmail(email);
@@ -42,14 +42,22 @@ export function EmailForm({ className, small, inverse }: FormButtonProps) {
     }
   }
 
-  return <div className={formStyles.formHolder + ' animate__animated animate__fadeInUp'}>
-    <input 
-      placeholder="enrique@sendpip.xyz"
-      type={"email"}
-      name={"email"}
-      onChange={handleChange}
-    />
+  return <>
+    <div>
+      <p>
+        Sign up with email
+      </p>
+    </div>
+    <div className={formStyles.formHolder + ' animate__animated animate__fadeInUp'}>
+      <input
+        placeholder="enrique@sendvaro.com"
+        type={"email"}
+        name={"email"}
+        onChange={handleChange}
+      />
 
-    <div onClick={sendEmail} className={btnClasses}>submit</div>
-  </div>;
+      <div onClick={sendEmail} className={btnClasses}>submit</div>
+
+    </div>
+  </>;
 };
