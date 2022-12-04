@@ -11,7 +11,8 @@
   background-color: black;
 
   @include phone{
-    overflow-y:auto
+    overflow-y:auto;
+    max-width: 100;
   }
 }
 
@@ -49,6 +50,10 @@
       animation-delay: .2s !important;
       // line-height: 24px;
       margin-bottom: 30px;
+    }
+
+    br {
+      margin-top: 5px;
     }
 
     @include laptop-s(){

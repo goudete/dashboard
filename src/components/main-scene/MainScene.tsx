@@ -38,8 +38,10 @@ export const MainScene = ({ }: MainSceneProps) => {
               Fast, safe, social payments between US and LATAM
             </h1>
             <p className={"animate__animated animate__fadeInUp"}>
-              We help international students in New York send and receive money between their 
-              family and friends back home
+              {/* We help international students in New York send and receive money between their 
+              family and friends back home */}
+              The friends and family borderless payment system that 
+              works with you, not against you.
             </p>
             <EmailForm />
           </div>

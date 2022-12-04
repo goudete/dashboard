@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
+import About from './pages/about/about';
 import Daos from './pages/daos/daos';
 import Dao from './pages/dao/dao';
 import DaoHome from './pages/daoHome/daoHome';
@@ -28,6 +29,7 @@ root.render(
         <Routes>
           <Route path="/" element={<App />}>
             <Route path="stripeTest" element={<StripeTest />} />
+            <Route path="about" element={<About />} />
             <Route path="daos" element={<Daos />} />
             <Route path="dao" element={<Dao />}>
               <Route path=":daoId" element={<DaoHome />} />

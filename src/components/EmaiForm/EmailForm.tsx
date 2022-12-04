@@ -45,7 +45,7 @@ export function EmailForm({ className, small, inverse }: FormButtonProps) {
   return <>
     <div>
       <p>
-        Sign up with email
+        Send money now
       </p>
     </div>
     <div className={formStyles.formHolder + ' animate__animated animate__fadeInUp'}>
