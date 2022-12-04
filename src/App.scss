@@ -1,4 +1,5 @@
 @import './styles/mixins.scss';
+
 .container {
     background-color: #1e1e1e;
     display: flex;
@@ -33,6 +34,16 @@
             img {
                 max-width: 40%;
             }
+
+            @include phone {
+                display: flex;
+                max-height: 100%;
+                max-width: 50%;
+
+                img {
+                    max-width: 50%;
+                }
+            }
         }
 
         .header-divider {
@@ -40,11 +51,12 @@
             height: 100%;
             width: 1px;
             background: #fff;
-            margin-left: 38px;
+            // margin-left: 38px;
             transform: translateY(-200px);
             animation: slideIn .6s ease forwards;
+
             // animation-delay: .2s;
-            &:after{
+            &:after {
                 content: '';
                 position: absolute;
                 width: 5px;
@@ -77,25 +89,24 @@
                 //     linear-gradient(-45deg, #0000 40%, #000 0 60%, #0000 0) right/300% 100% no-repeat;
                 // -webkit-background-clip: text, padding-box;
                 // background-clip: text, padding-box;
-                &::after{
+                &::after {
                     content: '';
                     height: 0;
                     position: absolute;
                     bottom: 0;
                     left: 0;
                 }
-                &:hover{
+
+                &:hover {
+
                     // background-position: left;
                     // color: black !important;
-                    &::after{
+                    &::after {
                         height: 2px;
                     }
+
                     border-bottom: 2px solid #fff;
                 }
-            }
-
-            @include phone{
-                display: none;
             }
 
             @include iPad() {
@@ -106,10 +117,12 @@
 
         &-connectWalletButton {
             margin-left: auto;
-            @include phone{
+
+            @include phone {
                 transform: scale(.8);
                 justify-self: flex-end;
             }
+
             @include iPad() {
                 transform: scale(.8);
                 justify-self: flex-end;
@@ -133,14 +146,14 @@
     }
 }
 
-@keyframes slideIn{
-    to{
+@keyframes slideIn {
+    to {
         transform: translateY(0);
     }
 }
 
-@keyframes fadeIn{
-    to{
+@keyframes fadeIn {
+    to {
         opacity: 1;
     }
 }
