@@ -5,7 +5,7 @@ import { Leva, useControls } from "leva";
 import { ParticlesBG } from "./ParticlesBG";
 import { MainGroup } from "./MainGroup";
 import { MainButton } from "../MainButton/MainButton";
-import { EmailForm } from "../EmaiForm/EmailForm";
+import { EmailFormHome } from "../EmaiFormHome/EmailFormHome";
 import { Navigate, useNavigate } from "react-router-dom";
 
 
@@ -35,7 +35,7 @@ export const MainScene = ({ }: MainSceneProps) => {
         <div className={styles.uiHolder}>
           <div className={styles.textSection}>
             <h1 className={"animate__animated animate__fadeInDown"}>
-              Fast, safe, social payments between US and LATAM
+              Fast, safe, social payments between the US and LatAm
             </h1>
             <p className={"animate__animated animate__fadeInUp"}>
               {/* We help international students in New York send and receive money between their 
@@ -43,7 +43,7 @@ export const MainScene = ({ }: MainSceneProps) => {
               The friends and family borderless payment system that 
               works with you, not against you.
             </p>
-            <EmailForm />
+            <EmailFormHome />
           </div>
         </div>
 

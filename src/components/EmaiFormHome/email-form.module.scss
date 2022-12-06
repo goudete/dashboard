@@ -7,16 +7,17 @@
     animation-delay: .8s;
 
     input {
-        padding: 0 15px;
+        padding: 15px 15px;
         border-radius: 20px;
-        width: 52%;
+        width: 100%;
+        max-width: 100%;
         -webkit-appearance: none;
         border: 0;
         margin: 0 10px 0 0;
         font-size: 22px;
 
         @include phone() {
-            width: 85%;
+            width: 100%;
             height: 50px;
             margin: 5px;
         }

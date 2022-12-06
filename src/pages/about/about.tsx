@@ -1,4 +1,5 @@
 import React from 'react';
+import { EmailFormAbout } from '../../components/EmailFormAbout/EmailFormAbout';
 import styles from "./about.module.scss";
 
 function About() {
@@ -9,13 +10,13 @@ function About() {
                         About Us
                     </h1>
                     <p className={"animate__animated animate__fadeInUp"}>
-                        SendVaro exists to help you send and receive money between your
+                        Varo exists to help you send and receive money between your
                         family and friends regardless of where you live.
                     </p>
                     <p className={"animate__animated animate__fadeInUp"}>
                         Current products are time-consuming, frustrating and expensive
                         because they are built on top of fragmented international payment 
-                        rails. SendVaro is not the current rails with a shiny new paint 
+                        rails. Varo is not the current rails with a shiny new paint 
                         job, it is the next generation of digital payments.
                     </p>
                     <p className={"animate__animated animate__fadeInUp"}>
@@ -29,9 +30,12 @@ function About() {
                         boarder payments between my family and friends in Mexico.
                     </p>
                     <p className={"animate__animated animate__fadeInUp"}>
-                        SendVaro is the friends and family borderless payment
+                        Varo is the friends and family borderless payment
                         system that works with you, not against you.
                     </p>
+                </div>
+                <div className={styles.textSection}>
+                    <EmailFormAbout />
                 </div>
             </div>
         </div>

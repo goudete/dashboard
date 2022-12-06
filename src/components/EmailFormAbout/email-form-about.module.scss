@@ -1,0 +1,72 @@
+@import '../../styles/mixins.scss';
+
+
+.formHolder {
+    display: flex;
+    flex-flow: row wrap;
+    animation-delay: .8s;
+
+    @include phone {
+      max-width: 80%;
+  }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+        padding: 15px 15px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 100%;
+        -webkit-appearance: none;
+        border: 0;
+        margin: 0 10px 0 0;
+        font-size: 22px;
+
+        @include phone() {
+            width: 85%;
+            height: 50px;
+            margin: 5px;
+        }
+    }
+}
+
+.buttonHolder {
+    padding: 10px 30px;
+    border: 1px solid rgba(255, 255, 255, .3);
+    border-radius: 50px;
+    width: 100%;
+    max-width: 100%;
+    line-height: 28px;
+    text-align: center;
+    cursor: pointer;
+    background: transparent;
+    transition: all .2s ease;
+    text-transform: uppercase;
+    animation-delay: .8s;
+    user-select: none;
+    font-weight: normal;
+    &.smallBtn{
+      padding: 6px 12px;
+      line-height: 14px;
+      font-size: 14px;
+      width: auto;
+      text-transform: capitalize;
+      margin: 10px;
+    }
+    &.inverseColors{
+      border: 1px solid rgba(0, 0, 0, .3);
+      color: #000;
+      &:hover{
+        color: #fff;
+        background: #000;
+      }
+    }
+  
+    &:hover {
+      background-position: left;
+      color: #000;
+      background: #fff;
+    }
+  }

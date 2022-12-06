@@ -12,7 +12,7 @@ type FormButtonProps = {
 const SERVICE = 'service_7wyoin7';
 const TEMPLATE = 'template_t57wz1s';
 
-export function EmailForm({ className, small, inverse }: FormButtonProps) {
+export function EmailFormHome({ className, small, inverse }: FormButtonProps) {
   const [email, setEmail] = useState<string | null>(null);
   const btnClasses = classnames([btnStyles.btnHolder, className ? className : '', small ? btnStyles.smallBtn : '', inverse ? btnStyles.inverseColors : ''])
 
