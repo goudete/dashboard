@@ -7,7 +7,7 @@
     animation-delay: .8s;
 
     @include phone {
-      max-width: 80%;
+      max-width: 95%;
   }
 
     h2 {
@@ -23,9 +23,10 @@
         border: 0;
         margin: 0 10px 0 0;
         font-size: 22px;
+        margin-bottom: 10px;
 
         @include phone() {
-            width: 85%;
+            width: 100%;
             height: 50px;
             margin: 5px;
         }
