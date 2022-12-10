@@ -16,7 +16,7 @@ function About() {
                     <p className={"animate__animated animate__fadeInUp"}>
                         Current products are time-consuming, frustrating and expensive
                         because they are built on top of fragmented international payment 
-                        rails. Varo is not the current rails with a shiny new paint 
+                        systems. Varo is not the current system with a shiny new paint 
                         job, it is the next generation of digital payments.
                     </p>
                     <p className={"animate__animated animate__fadeInUp"}>
